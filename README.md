@@ -1,4 +1,4 @@
-### App
+#### APP
 
-Azury's App\
-**[app.azury.gg](https://app.azury.gg)**
+the app\
+**[azury.gg](https://azury.gg)**
