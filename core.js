@@ -89,14 +89,24 @@ async function emptyDirectory(dir) {
 
 // ---------------- PUT OBJECT ---------------- //
 
-async function putObject(req, file, owner) {
+async function putObject(req, file, owner, type) {
   const encodedName = file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()
 
-  let params = {
-    Body: req.files.upload.data,
-    Bucket: env.spacesName,
-    Key: `${s3Prefix}${owner}/${file._id}/${encodedName}${file.type}`,
-    ACL: 'public-read'
+  let params 
+  if (type == 'team') {
+    params = {
+      Body: req.files.upload.data,
+      Bucket: env.spacesName,
+      Key: `${s3Prefix}teams/${owner}/${file._id}/${encodedName}${file.type}`,
+      ACL: 'public-read'
+    }
+  } else {
+    params = {
+      Body: req.files.upload.data,
+      Bucket: env.spacesName,
+      Key: `${s3Prefix}${owner}/${file._id}/${encodedName}${file.type}`,
+      ACL: 'public-read'
+    }
   }
 
   s3.putObject(params, function(err) {
@@ -113,7 +123,7 @@ async function cloneObject(file, clone, type) {
 
   let owner
   if (type == 'team') {
-    owner = file.team
+    owner = `teams/${file.team}`
   } else {
     owner = file.user
   }
@@ -143,7 +153,7 @@ async function renameObject(file, newName, type) {
 
   let owner
   if (type == 'team') {
-    owner = file.team
+    owner = `teams/${file.team}`
   } else {
     owner = file.user
   }
@@ -175,7 +185,7 @@ async function renameObject(file, newName, type) {
 async function deleteObject(file, type) {
   let owner
   if (type == 'team') {
-    owner = file.team
+    owner = `teams/${file.team}`
   } else {
     owner = file.user
   }
@@ -370,7 +380,7 @@ async function uploadFile(req, type) {
 
     accountlessUploadCache.set(upload._id, upload)
 
-    const s3Upload = await putObject(req, upload, 'accountless')
+    const s3Upload = await putObject(req, upload, 'accountless', 'accountless')
     if (s3Upload == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
 
     const data = {
@@ -421,7 +431,7 @@ async function uploadFile(req, type) {
 
     teamUploadCache.set(upload._id, upload)
 
-    const s3Upload = await putObject(req, upload, req.params.team)
+    const s3Upload = await putObject(req, upload, req.params.team, 'team')
     if (s3Upload == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
 
     const data = {
@@ -456,7 +466,7 @@ async function uploadFile(req, type) {
 
     uploadCache.set(upload._id, upload)
 
-    const s3Upload = await putObject(req, upload, user)
+    const s3Upload = await putObject(req, upload, user, 'user')
     if (s3Upload == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
 
     const data = {
@@ -1259,7 +1269,7 @@ async function deleteTeam(req) {
   if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team' }
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
-  const s3DirectoryClear = await emptyDirectory(req.params.team)
+  const s3DirectoryClear = await emptyDirectory(`teams/${req.params.team}`)
   if (s3DirectoryClear == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
 
   await teamUploadSchema.deleteMany({ 'team': req.params.team }, (err, success) => {
