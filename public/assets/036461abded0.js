@@ -480,29 +480,6 @@ if (document.getElementById('renameFileSubmit')) {
   }) 
 }
 
-// -------------------------------- add download -------------------------------- //
-
-function addDownload(file, type) {
-  function put(url, callback) {
-    fetch(url, { method: 'PUT' })
-    .then((response) => {
-      if (response.status == 200) {
-        response.json().then((data) => { callback(data) })
-      } else {
-        response.json().then((data) => { fail(response.status, data) })
-      }
-    })
-  }
-
-  if (type == 'user') {
-    put(`/capi/users/files/${file}/downloads/add`)
-  }
-
-  if (type == 'team') {
-    put(`/capi/teams/files/${file}/downloads/add`)
-  }
-}
-
 // -------------------------------- rename team -------------------------------- //
 
 function renameTeam(team) {
