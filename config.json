@@ -1,0 +1,24 @@
+{
+  "website": "https://azury.gg",
+  "app": "https://app.azury.gg",
+
+  "scopes": ["identify"],
+  "discordServer": "680782208725942345",
+
+  "jsWrapper": "1.1.0",
+  "pyWrapper": "1.0.0",
+  "staffMembers": "2",
+  "version": "1.0.0",
+
+  "uploadLimit": "100",
+  "accountlessUploadLimit": "100",
+  "teamLimit": "1",
+  "teamMemberLimit": "50",
+
+  "discord": "https://discord.gg/DVs6JjmpsX",
+  "gitlab": "https://gitlab.com/azury",
+  "github": "https://github.com/azuryofficial",
+  "youtube": "https://www.youtube.com/channel/UCTwjTn5_W-bL_oezJ2trcDA",
+  "twitter": "https://twitter.com/azuryofficial",
+  "instagram": "https://instagram.com/azuryofficial"
+}
