@@ -402,7 +402,7 @@ async function uploadFile(req, type) {
     if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team From Database' }
 
     function isMember(member, index, array) {
-      return member.id == user
+      return member == user
     }
 
     if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -503,7 +503,7 @@ async function cloneFile(req, type) {
     if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team From Database' }
 
     function isMember(member, index, array) {
-      return member.id == user
+      return member == user
     }
 
     if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -867,7 +867,7 @@ async function renameFile(req, type) {
     if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team From Database' }
 
     function isMember(member, index, array) {
-      return member.id == user
+      return member == user
     }
 
     if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -956,7 +956,7 @@ async function deleteFile(req, type) {
     if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team From Database' }
 
     function isMember(member, index, array) {
-      return member.id == user
+      return member == user
     }
 
     if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -1089,9 +1089,7 @@ async function createTeam(req) {
   const team = new teamSchema({
     name: teamName,
     owner: user,
-    members: [{
-      'id': user
-    }]
+    members: [user]
   })
 
   team.save(function (err) {
@@ -1176,7 +1174,7 @@ async function transferTeam(req) {
   if (team.owner != user) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member.id == req.params.owner
+    return member == req.params.owner
   }
 
   if (team.members.some(isMember) == false) return { 'code': 400, 'status': 'New Owner Has To Be A Member' }
@@ -1218,7 +1216,7 @@ async function leaveTeam(req) {
   if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team' }
 
   function isMember(member, index, array) {
-    return member.id == user
+    return member == user
   }
 
   if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -1306,14 +1304,14 @@ async function addMember(req) {
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member.id == req.params.member
+    return member == req.params.member
   }
 
   if (team.members.some(isMember)) return { 'code': 400, 'status': 'Invalid Member' }
 
   if (team.members.length >= config.teamMemberLimit) return { 'code': 400, 'status': 'Team Member Limit Reached' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$push': { 'members': { 'id': req.params.member } }}, { returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$push': { 'members': req.params.member }}, { returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Add Member' }
   })
 
@@ -1354,12 +1352,12 @@ async function removeMember(req) {
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member.id == req.params.member
+    return member == req.params.member
   }
 
   if (team.members.some(isMember) == false) return { 'code': 400, 'status': 'Invalid Member' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': { 'id': req.params.member } }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': req.params.member }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Remove Member' }
   })
 
@@ -1397,7 +1395,7 @@ async function userTeams(req) {
   const user = await userID(req)
   if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
 
-  const teams = await teamSchema.find({ 'member.id': user }, (err, success) => {
+  const teams = await teamSchema.find({ 'members': user }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Fetch Teams' }
   })
 
@@ -1461,7 +1459,7 @@ async function teamFiles(req) {
   if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team' }
 
   function isMember(member, index, array) {
-    return member.id == user
+    return member == user
   }
 
   if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
@@ -1496,7 +1494,7 @@ async function teamMembers(req) {
   if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team' }
 
   function isMember(member, index, array) {
-    return member.id == user
+    return member == user
   }
 
   if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
