@@ -78,24 +78,24 @@
   
           <div class="bottom-m9gc0d">
             <div class="row-5jwqq3">
-              <% if (author == 'shared') { %>
-                <a href="https://cdn.azury.gg/<%= file.team %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" onclick="teamUpdateDownloadCount('<%= file._id %>')">
-                  <button class="btn-j85yzo" onclick="addDownload('<%= file._id %>', 'team')">Download</button>
+              <% if (author == 'Team') { %>
+                <a href="https://cdn.azury.gg/teams/<%= file.team %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" onclick="teamUpdateDownloadCount('<%= file._id %>')">
+                  <button class="btn-j85yzo">Download</button>
                 </a>
-              <% } else if (author == 'anonymous') { %>
+              <% } else if (author == 'Anonymous') { %>
                 <a href="https://cdn.azury.gg/accountless/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>">
                   <button class="btn-j85yzo">Download</button>
                 </a>
               <% } else { %>
                 <a href="https://cdn.azury.gg/<%= file.user %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" onclick="userUpdateDownloadCount('<%= file._id %>')">
-                  <button class="btn-j85yzo" onclick="addDownload('<%= file._id %>', 'user')">Download</button>
+                  <button class="btn-j85yzo">Download</button>
                 </a>
               <% } %>
   
               <i class="fas fa-exclamation-circle item-s1hmcl" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScjf1xgBjLyeAaM8PNs4oFTko5ixwTGe7qyGcU91bDhgK5cHw/viewform?usp=pp_url&entry.1466240166=<%= file._id %>')"></i>
-              <% if (author == 'shared') { %>
+              <% if (author == 'Team') { %>
                 <i class="fas fa-share item-m30x67" onclick="teamShare('<%= file._id %>')"></i>
-              <% } else if (author == 'anonymous') { %>
+              <% } else if (author == 'Anonymous') { %>
                   <i class="fas fa-share item-m30x67" onclick="anonymousShare('<%= file._id %>')"></i>
               <% } else { %>
                 <i class="fas fa-share item-m30x67" onclick="userShare('<%= file._id %>')"></i>
