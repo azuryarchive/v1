@@ -18,7 +18,22 @@
     </div>
 
     <%- include('../partials/cookie-notice'); %>
-    <script src="/assets/9c8e3596759b.js"></script>
+    <script>
+      const emotes = [
+        '(╯°□°）╯︵ ┻━┻',
+        '(^_^)b',
+        '\\(^Д^)/',
+        '(^-^*)',
+        '(;-;)',
+        '(=\'X\'=)',
+        '(o^^)o',
+        '(>_<)',
+        '(·_·)',
+        '¯\\_(ツ)_/¯'
+      ]
+      const randomEmote = Math.floor(Math.random()*emotes.length)
+      document.querySelector('.errorEmote-use4zr').innerHTML = emotes[randomEmote]
+    </script>
     <% if (authenticated) { %>
       <script>
         interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
