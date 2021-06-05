@@ -1,0 +1,87 @@
+<div class="error-y5jo4q"></div>
+
+<div class="announcement-wmr7f8">
+  <i class="fas fa-megaphone"></i>
+  <p>We've released Badges, which you can easily include as images in your website.</p>
+</div>
+
+<div class="desktopWrapper-a43ttn">
+  <a class="brand-3hcazj" href="/">Azury</a>
+  <nav class="links-bklq8f">
+    <a class="link-tdhsra" href="/discord" target="_blank">Discord</a>
+    <a class="link-tdhsra" href="/statistics">Statistics</a>
+    <a class="link-tdhsra" href="/developers/docs">Documentation</a>
+    <a class="link-tdhsra" href="https://forms.gle/JS9xfSojcAosmw439" target="_blank">Help & Support</a>
+    <a class="link-tdhsra" href="/status" target="_blank">Status</a>
+  </nav>
+  <div class="row-2v0fkd">
+    <div class="social-b4vij1">
+      <i class="fab fa-twitter" onclick="window.open('/twitter')"></i>
+      <i class="fab fa-github" onclick="window.open('/github')"></i>
+      <i class="fab fa-instagram" onclick="window.open('/instagram')"></i>
+    </div>
+    <% if (authenticated) { %>
+      <div class="avatar-if6jiw">
+        <img src="https://cdn.discordapp.com/avatars/<%= u.id %>/<%= u.avatar %>" alt="error">
+      </div>
+    <% } else { %>
+      <button class="btn-j85yzo" onclick="window.location.href='/login'">
+        Sign in
+      </button>
+    <% } %>
+  </div>
+</div>
+
+<% if (authenticated) { %>
+  <div id="settingsDropdown-svgdhe" class="actions-1asr66">
+    <div class="action-m9sypr" onclick="window.location.href='/inventory'">
+      Inventory
+    </div>
+    <div class="action-m9sypr" onclick="window.location.href='/account'">
+      Settings
+    </div>
+    <div class="action-m9sypr" onclick="window.open('https://forms.gle/AqpSy2ncq4XNcfvb6')">
+      Suggest a Feature
+    </div>
+    <div class="action-m9sypr" onclick="window.open('https://forms.gle/JS9xfSojcAosmw439')">
+      Help & Support
+    </div>
+    <div class="separator-3i6ltg"></div>
+    <div class="action-m9sypr danger-hkfr30" onclick="window.location.href='/logout'">
+      Log Out
+    </div>
+  </div>
+<% } %>
+
+<div class="mobileWrapper-xnlvjj">
+  <a class="brand-3hcazj" href="/">Azury</a>
+  <div class="row-sebeim">
+    <button class="btn-j85yzo" onclick="window.location.href='/app'">
+      <% if (authenticated) { %>
+        Open Azury
+      <% } else { %>
+        Sign in
+      <% } %>
+    </button>
+    <div class="separator-xzuvcu"></div>
+    <i class="fal fa-bars showMobileMenu-evttun"></i>
+  </div>
+</div>
+
+<div class="mobileMenu-vmkvxd">
+  <div class="menuWrapper-ccdjvj">
+    <i class="fal fa-times hideMobileNavigation-avxn7l"></i>
+    <div class="mobileLinks-vztmdv">
+      <a href="/discord" target="_blank">Discord</a>
+      <a href="/statistics">Statistics</a>
+      <a href="/developers/docs">Documentation</a>
+      <a href="https://forms.gle/JS9xfSojcAosmw439" target="_blank">Help & Support</a>
+      <a href="/status" target="_blank">Status</a>
+    </div>
+    <div class="social-8illpa">
+      <i class="fab fa-twitter" onclick="window.open('/twitter')"></i>
+      <i class="fab fa-github" onclick="window.open('/github')"></i>
+      <i class="fab fa-instagram" onclick="window.open('/instagram')"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Team <%= team.name %></title>
+    <meta content="Azury - Team <%= team.name %>" property="og:title">
+    <meta content="Azury - Team <%= team.name %>" property="twitter:title">
+
+    <%- include('../../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <div class="mobileSpoiler-1mb3vv">
+      <i class="fas fa-mobile"></i>
+      <p>Azury is not yet ready for mobile devices.</p>
+    </div>
+    
+    <div class="app">
+      <%- include('../../partials/sidenavigation'); %>
+      <div class="sidebar-rwlef6">
+        <div class="links-sxdz75 wrapper-y0yo96">
+          <div class="teamSettings-rqa973">
+            <h1><%= team.name %></h1>
+            <div class="options-a2f0t6">
+              <% if (u.id != team.owner) { %>
+                <i class="fas fa-arrow-alt-right leave-ehep0n" onclick="teamLeave('<%= team._id %>')"></i>
+              <% } else { %>
+                <i class="fas fa-cog settings-ex8tpq"></i>
+                <div id="teamSettingsDropdown" class="actions-1asr66">
+                  <div class="action-m9sypr" onclick="renameTeam('<%= team._id %>')">
+                    Rename
+                  </div>
+                  <div class="action-m9sypr" onclick="transferTeam('<%= team._id %>')">
+                    Transfer
+                  </div>
+                  <div class="separator-3i6ltg"></div>
+                  <div class="action-m9sypr danger-hkfr30" onclick="deleteTeam('<%= team._id %>')">
+                    Delete
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+  
+          <div class="members-g7r8pp">
+            <% if (members != null) { %>
+              <% members.forEach(function(member) { %>
+                <div class="memberWrapper-rkgtl4">
+                  <div class="member-4x4de0">
+                    <div class="memberInfo-it8aao">
+                      <img src="https://cdn.discordapp.com/avatars/<%= member.id %>/<%= member.avatar %>" alt="error">
+                      <div class="name-4mpmh3">
+                        <p><%= member.username %><small>#<%= member.discriminator %></small></p>
+                        <% if (member.id == team.owner) { %>
+                          <i class="fas fa-crown owner-ala9xf"></i>
+                        <% } %>
+                      </div>
+                    </div>
+                    <div class="options-rpi5d2">
+                      <% if (team.owner == u.id && team.owner != member.id) { %>
+                        <i class="fal fa-times kick-r0tb95" onclick="kickUser('<%= team._id %>', '<%= member.id %>')"></i>
+                      <% } %>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+          <div class="inviteMember-ijkvpb">
+            <button class="btn-j85yzo" onclick="addUserToTeam('<%= team._id %>')">Add Friends</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container-dzrjwb">
+        <%- include('../../partials/navigation'); %>
+    
+        <div class="wrapper-s3en1r">
+          <div class="container-ahg65x scroller-ffigeh" data-aos="fade-up">
+            <div class="wrapper-40j482">
+              <div class="row-chazt8">
+                <input type="text" class="searchbar-7zbruk" id="searchbar" onkeyup="search()" placeholder="Search File...">
+                <div class="options-sf1c0v">
+                  <i class="fas fa-th-large toggleGrid-iqpt69 toggle-9gexqa"></i>
+                  <i class="fas fa-th-list toggleList-9aylap toggle-9gexqa"></i>
+                  
+                  <div class="row-23omrp">
+                    <input type="file" class="input-qzb607" id="file" data-upload="team" data-team="<%= team._id %>">
+                    <label for="file" data-upload="<%= team._id %>">
+                      <i class="fal fa-plus upload-pylec6" data-upload="<%= team._id %>"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <% if (files != null && files != 'undefined' && files != '') { %>
+                <div class="wrapperInner-xtc435">
+                  <% files.forEach(function(file) { %>
+                    <div data-template="template-<%= file._id %>" class="file-lemhr3 item-96xnxf <% if (file.favorite == true) { %>favorite<% } %>">
+                      <% if (file.type == '.zip' || file.type == '.rar') { %>
+                        <i class="fas fa-file-archive"></i>    
+                      <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
+                        <i class="fas fa-file-code"></i>
+                      <% } else if (file.type == '.png' || file.type == '.jpg' || file.type == '.jpeg' || file.type == '.gif' || file.type == '.svg' || file.type == '.psd') { %>
+                        <i class="fas fa-file-image"></i>
+                      <% } else if (file.type == '.mp3' || file.type == '.wav') { %>
+                        <i class="fas fa-file-music"></i>
+                      <% } else if (file.type == '.mp4') { %>
+                        <i class="fas fa-file-video"></i>
+                      <% } else if (file.type == '.docx' || file.type == '.pdf') { %>
+                        <i class="fas fa-file-alt"></i>
+                      <% } else { %>
+                        <i class="fas fa-file"></i>
+                      <% } %>
+                      <div class="title-ojp0kq">
+                        <% if (file.type == '.zip' || file.type == '.rar') { %>
+                          <i class="fas fa-file-archive"></i>    
+                        <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
+                          <i class="fas fa-file-code"></i>
+                        <% } else if (file.type == '.png' || file.type == '.jpg' || file.type == '.jpeg' || file.type == '.gif' || file.type == '.svg' || file.type == '.psd') { %>
+                          <i class="fas fa-file-image"></i>
+                        <% } else if (file.type == '.mp3' || file.type == '.wav') { %>
+                          <i class="fas fa-file-music"></i>
+                        <% } else if (file.type == '.mp4') { %>
+                          <i class="fas fa-file-video"></i>
+                        <% } else if (file.type == '.docx' || file.type == '.pdf') { %>
+                          <i class="fas fa-file-alt"></i>
+                        <% } else { %>
+                          <i class="fas fa-file"></i>
+                        <% } %>
+                        <h1><span><%= file.name %></span><b><%= file.type %></b></h1>
+                      </div>
+  
+                      <div class="info-xmghpq">
+                        <% if (file.size < 1048576) { %>
+                          <span><%= Math.round(file.size/1024) + ' KB' %></span>
+                        <% } else { %>  
+                          <span><%= Math.round(file.size/1024/1024) + ' MB' %></span>
+                        <% } %>
+                        <span><%= date(file.createdAt).format('LL') %></span>
+                      </div>
+                    </div>
+  
+                    <div id="template-<%= file._id %>" class="actions-1asr66">
+                      <div class="action-m9sypr" onclick="teamRename('<%= file._id %>')">
+                        Rename
+                      </div>
+                      <div class="action-m9sypr" onclick="teamCreateClone('<%= file._id %>')">
+                        Create a Clone
+                      </div>
+                      <div class="action-m9sypr" onclick="teamShare('<%= file._id %>')">
+                        Share
+                      </div>
+                      <div class="action-m9sypr" onclick="copy('https://azury.gg/t/<%= file._id %>')">
+                        Copy Link
+                      </div>
+                      <div class="action-m9sypr" onclick="copy('https://cdn.azury.gg/<%= team._id %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>')">
+                        Copy CDN Link
+                      </div>
+                      <div class="action-m9sypr" onclick="teamShortLink('<%= file._id %>')">
+                        Copy Short Link
+                      </div>
+                      <div class="separator-3i6ltg"></div>
+                      <div class="action-m9sypr" onclick="teamViewDetails('<%= file._id %>')">
+                        View Details
+                      </div>
+                      <a class="action-m9sypr" href="https://cdn.azury.gg/<%= team._id %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" download="<%= file.name %>">
+                        Download
+                      </a>
+                      <div class="separator-3i6ltg"></div>
+                      <div class="action-m9sypr danger-hkfr30" onclick="teamDeleteFile('<%= file._id %>')">
+                        Delete Permanently
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="noFile-8alx2j uploadNewFile-j3xij5">
+                  <i class="fas fa-file-plus"></i>
+                  <p>Click here to add a new file.</p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../../partials/popups') %>
+    <%- include('../../partials/cookie-notice') %>
+    <script>
+      sidebarTip ('kick-r0tb95', 'Kick User', 'top')
+sidebarTip ('owner-ala9xf', 'Team Owner', 'top')
+sidebarTip ('leave-ehep0n', 'Leave Team', 'top')
+interactiveTip ('settings-ex8tpq', 'teamSettingsDropdown', 'bottom')
+    </script>
+    <%- include('../../partials/tips'); %>
+  </body>
+</html>

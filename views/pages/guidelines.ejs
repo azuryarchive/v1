@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Guidelines</title>
+    <meta content="Azury - Guidelines" property="og:title">
+    <meta content="Azury - Guidelines" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <header class="header-0hjphw">
+      <%- include('../partials/header.ejs') %>
+    </header>
+
+    <div class="wrapper-gvvpn3">
+      <div class="document-eii6zl">
+        <div class="documentHeader-o0lx4m">
+          <h1>Community Guidelines</h1>
+          <span>Last modified: April 4th, 2021.</span>
+        </div>
+
+        <h2>Some rules for content on Azury</h2>
+  
+        <ol>
+          <li><b>Do not upload viruses.</b> It is strictly prohibited to upload any kind of trojan, virus, malware, or other malicious software and distribute it through our network.</li>
+          <li><b>Do not upload explicit content.</b> It is strictly prohibited to upload explicit content, such as pornographic material, nude pictures, and any content that is classified as NSFW.</li>
+          <li><b>Do not upload private content.</b> Do not upload private content, such as pictures of yourself, your friends, your family, or private documents that you don't want to be published. Nevertheless, if you upload any at your own risk, do not give someone the sharable file link.</li>
+          <li><b>Do not upload pirated software.</b> You are strictly prohibited from uploading software or files in general that you lack the necessary permission to redistribute, that have been stolen, or that have been altered in any way.</li>
+          <li><b>Do not upload offensive content.</b> You are not allowed to upload images, documents, videos, or files that discriminate, offend or mentally harm someone else.</li>
+          <li><b>Do not upload illegal content.</b> Additionally, you are prohibited from uploading and distributing any content that is considered illegal in the EU, the United States, or your home country.</li>
+        </ol>
+
+        <h2>Finally, we ask that you respect Azury itself</h2>
+
+        <ol start="7">
+          <li><b>You may not sell your account, your team or your files.</b></li>
+          <li><b>You may not share content that violates anyone's intellectual property or other rights.</b></li>
+          <li><b>You may not spam Azury</b>, especially our Customer Support. Making false and malicious reports, sending multiple reports about the same issue, or asking a group of users to all report the same content may lead to action being taken on your account.</li>
+        </ol>
+
+        <p>If you see any activity that violates these guidelines, you can report it to us by filling out <a href="https://forms.gle/S3LwnVcKFHKFeVnf8" target="_blank">this form</a>.</p>
+      </div>
+    </div>
+
+    <footer class="footer-xbjh68">
+      <%- include('../partials/footer.ejs') %>
+    </footer>
+    
+    <%- include('../partials/cookie-notice'); %>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>
+

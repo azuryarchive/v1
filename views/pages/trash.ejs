@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Trash</title>
+    <meta content="Azury - Trash" property="og:title">
+    <meta content="Azury - Trash" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <div class="mobileSpoiler-1mb3vv">
+      <i class="fas fa-mobile"></i>
+      <p>Azury is not yet ready for mobile devices.</p>
+    </div>
+    
+    <div class="app">
+      <%- include('../partials/sidenavigation'); %>
+
+      <div class="container-i0qpo7">
+        <%- include('../partials/navigation'); %>
+    
+        <div class="wrapper-s3en1r">
+          <div class="container-ahg65x scroller-ffigeh" data-aos="fade-up"> 
+            <div class="wrapper-40j482">
+              <div class="row-chazt8">
+                <input type="text" class="searchbar-7zbruk" id="searchbar" onkeyup="search()" placeholder="Search File...">
+                <div class="options-sf1c0v">
+                  <i class="fas fa-th-large toggleGrid-iqpt69 toggle-9gexqa"></i>
+                  <i class="fas fa-th-list toggleList-9aylap toggle-9gexqa"></i>
+                </div>
+              </div>
+  
+              <% if (files != null && files != 'undefined' && files != '') { %>
+                <div class="wrapperInner-xtc435">
+                  <% files.forEach(function(file) { %>
+                    <div data-aos="fade" data-template="template-<%= file._id %>" class="file-lemhr3 item-96xnxf <% if (file.favorite == true) { %>favorite<% } %>">
+                      <i class="fas fa-file-times"></i>
+                      <div class="title-ojp0kq">
+                        <i class="fas fa-file-times"></i>
+                        <h1><span><%= file.name %></span><b><%= file.type %></b></h1>
+                      </div>
+  
+                      <div class="info-xmghpq">
+                        <% if (file.size < 1048576) { %>
+                          <span><%= Math.round(file.size/1024) + ' KB' %></span>
+                        <% } else { %>  
+                          <span><%= Math.round(file.size/1024/1024) + ' MB' %></span>
+                        <% } %>
+                        <span><%= date(file.createdAt).format('LL') %></span>
+                      </div>
+                    </div>
+  
+                    <div id="template-<%= file._id %>" class="actions-1asr66">
+                      <div class="action-m9sypr" onclick="userTrashFile('<%= file._id %>')">
+                        Restore
+                      </div>
+                      <div class="action-m9sypr danger-hkfr30" onclick="userDeleteFile('<%= file._id %>')">
+                        Delete Permanently
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="noFile-8alx2j noFileMoved-wkqwqo">
+                  <i class="fas fa-trash-alt"></i>
+                  <p>There are no files trashed yet.</p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../partials/popups') %>
+    <%- include('../partials/cookie-notice') %>
+    <%- include('../partials/tips'); %>
+  </body>
+</html>

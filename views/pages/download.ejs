@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - <%= file.name %><%= file.type%></title>
+    <meta content="Azury - <%= file.name %><%= file.type%>" property="og:title">
+    <meta content="Azury - <%= file.name %><%= file.type%>" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <div class="app-k76fue">
+      <header class="header-3ctouz">
+        <%- include('../partials/header.ejs') %>
+      </header>
+
+      <div class="row-kzwobq">
+        <div class="sideAdWrapper-gmsscz">
+          <p>Advertisement</p>
+          <div class="row-7moojr">
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+          </div>
+        </div>
+
+        <div class="file-p5ndhd">
+          <div class="header-hi19xk">
+            <% if (file.type == '.zip' || file.type == '.rar') { %>
+              <i class="fas fa-file-archive"></i>    
+            <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
+              <i class="fas fa-file-code"></i>
+            <% } else if (file.type == '.png' || file.type == '.jpg' || file.type == '.jpeg' || file.type == '.gif' || file.type == '.svg' || file.type == '.psd') { %>
+              <i class="fas fa-file-image"></i>
+            <% } else if (file.type == '.mp3' || file.type == '.wav') { %>
+              <i class="fas fa-file-music"></i>
+            <% } else if (file.type == '.mp4') { %>
+              <i class="fas fa-file-video"></i>
+            <% } else if (file.type == '.docx' || file.type == '.pdf') { %>
+              <i class="fas fa-file-alt"></i>
+            <% } else { %>
+              <i class="fas fa-file"></i>
+            <% } %>
+            <h1><%= file.name %><small><%= file.type %></small></h1>
+          </div>
+  
+          <div class="details-1u92ti">
+            <h2>Author</h2>
+            <% if (author == 'shared') { %>
+              <p>Team (Shared)</p>
+            <% } else if (author == 'anonymous') { %>
+              <p>Anonymous</p>
+            <% } else { %>
+              <p>
+                <img src="https://cdn.discordapp.com/avatars/<%= author.id %>/<%= author.avatar %>" alt="error">
+                <%= author.username %>#<%= author.discriminator %>
+              </p>
+            <% } %>
+            <h2>Size</h2>
+            <% if (file.size < 1048576){ %>
+              <p><%= Math.round(file.size/1024, 2) + ' KB' %></p>
+            <% } else { %>  
+              <p><%= Math.round(file.size/1024/1024, 2) + ' MB' %></p>
+            <% } %>
+            <h2>Uploaded At</h2>
+            <p><%= date(file.createdAt).format('LL') %></p>
+          </div>
+  
+          <div class="bottom-m9gc0d">
+            <div class="row-5jwqq3">
+              <% if (author == 'shared') { %>
+                <a href="https://cdn.azury.gg/<%= file.team %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" onclick="teamUpdateDownloadCount('<%= file._id %>')">
+                  <button class="btn-j85yzo" onclick="addDownload('<%= file._id %>', 'team')">Download</button>
+                </a>
+              <% } else if (author == 'anonymous') { %>
+                <a href="https://cdn.azury.gg/accountless/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>">
+                  <button class="btn-j85yzo">Download</button>
+                </a>
+              <% } else { %>
+                <a href="https://cdn.azury.gg/<%= file.user %>/<%= file._id %>/<%= file.name.replace(/[^a-z0-9]/gui, "").toLowerCase() %><%= file.type %>" onclick="userUpdateDownloadCount('<%= file._id %>')">
+                  <button class="btn-j85yzo" onclick="addDownload('<%= file._id %>', 'user')">Download</button>
+                </a>
+              <% } %>
+  
+              <i class="fas fa-exclamation-circle item-s1hmcl" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScjf1xgBjLyeAaM8PNs4oFTko5ixwTGe7qyGcU91bDhgK5cHw/viewform?usp=pp_url&entry.1466240166=<%= file._id %>')"></i>
+              <% if (author == 'shared') { %>
+                <i class="fas fa-share item-m30x67" onclick="teamShare('<%= file._id %>')"></i>
+              <% } else if (author == 'anonymous') { %>
+                  <i class="fas fa-share item-m30x67" onclick="anonymousShare('<%= file._id %>')"></i>
+              <% } else { %>
+                <i class="fas fa-share item-m30x67" onclick="userShare('<%= file._id %>')"></i>
+              <% } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="sideAdWrapper-gmsscz">
+          <p>Advertisement</p>
+          <div class="row-7moojr">
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+            <div class="ad-nvhvbb">
+              <script data-cfasync="false" type="text/javascript" src="https://uprimp.com/bnr.php?section=General&pub=576616&format=160x600&ga=g"></script>
+              <noscript><a href="https://yllix.com/publishers/576616" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <footer class="footer-57jf6e">
+        <%- include('../partials/footer.ejs') %>
+      </footer>
+    </div>
+    
+    <%- include('../partials/popups'); %>
+    <%- include('../partials/cookie-notice'); %>
+    <script>
+      sidebarTip ('item-s1hmcl', 'Report File', 'top')
+      sidebarTip ('item-m30x67', 'Share', 'top')
+      sidebarTip ('share-1e3h7u', 'Copy Link', 'top')
+      sidebarTip ('share-z205mu', 'Share via E-Mail', 'top')
+      sidebarTip ('share-9fwn4q', 'Share on Facebook', 'top')
+      sidebarTip ('share-kjel94', 'Share via Flipboard', 'top')
+      sidebarTip ('share-f4glxl', 'Share via VK', 'top')
+      sidebarTip ('share-c9lf1i', 'Share via WhatsApp', 'top')
+      sidebarTip ('share-iy0ox5', 'Tweet File', 'top')
+      sidebarTip ('share-era4xv', 'Share via Reddit', 'top')
+      sidebarTip ('share-js7r5b', 'Share via Telegram', 'top')
+    </script>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<div class="sideNavigation-5f72an">
+  <div id="inventoryItem" class="listItem-dasxb0">
+    <div class="item-kmuqf5 listItemInner-ihlzoe item-4f7rqs" onclick="window.location.href='/inventory'">
+      <i class="fas fa-copy"></i>
+      <span class="item-s5gj8d"></span>
+    </div>
+  </div>
+  <div id="archiveItem" class="listItem-dasxb0">
+    <div class="item-kmuqf5 listItemInner-ihlzoe item-e6vja0" onclick="window.location.href='/archive'">
+      <i class="fas fa-archive"></i>
+      <span class="item-s5gj8d"></span>
+    </div>
+  </div>
+  <div id="trashItem" class="listItem-dasxb0">
+    <div class="item-kmuqf5 listItemInner-ihlzoe item-e0lknt" onclick="window.location.href='/trash'">
+      <i class="fas fa-trash-alt"></i>
+      <span class="item-s5gj8d"></span>
+    </div>
+  </div>
+
+  <div class="separator-cbh0bj"></div>
+
+  <% teams.forEach(function(team) { %>
+    <div class="listItem-dasxb0">
+      <div data-template="template-<%= team.id %>" class="team-g6ihe4 listItemInner-ihlzoe" onclick="window.location.href='/team/<%= team.id %>'">
+        <% if (team.icon != 0) { %>
+          <img src="https://cdn.azury.gg/icons/<%= team.icon %>" alt="error">
+        <% } else { %>
+          <div class="icon-g0shac">
+            <%= team.name.charAt(0) %>
+          </div>
+        <% } %>
+        <span class="item-s5gj8d"></span>
+      </div>
+      <div id="template-<%= team.id %>" class="actions-1asr66"><%= team.name %></div>
+    </div>
+  <% }) %>
+
+  <div class="listItem-dasxb0">
+    <div class="item-kmuqf5 listItemInner-ihlzoe item-j86qw1" onclick="createNewTeam()">
+      <i class="fal fa-plus"></i>
+      <span class="item-s5gj8d"></span>
+    </div>
+  </div>
+</div>

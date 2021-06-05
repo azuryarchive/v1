@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Share an unlimited amount of files for free!</title>
+    <meta content="Azury - Share an unlimited amount of files for free!" property="og:title">
+    <meta content="Azury - Share an unlimited amount of files for free!" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <header class="header-i5rlgr">
+      <%- include('../partials/header.ejs') %>
+    </header>
+
+    <div class="hero-xe4mq2">
+      <div class="column-apecj9">
+        <h1>Sharing that you'll enjoy.</h1>
+        <p>Share an unlimited amount of files up to 100 MB each for free within seconds - easily and without intrusive advertising.</p>
+      </div>
+      <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/1efe4fae394a.svg" alt="error">
+    </div>
+
+    <section class="features-inh23y">
+      <div class="row-2r4hqg">
+        <div class="column-xhkggz">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/7d3760f81ed4.svg" alt="error">
+          <h3>Unlimited Storage</h3>
+          <p>We offer you *unlimited* free storage - without hidden costs and without intrusive advertising.</p>
+        </div>
+        <div class="column-xhkggz">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/02a681bf4179.svg" alt="error">
+          <h3>Collaborate Easily</h3>
+          <p>Create teams easily, invite friends and share files with each other.</p>
+        </div>
+        <div class="column-xhkggz">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/6322b080acdc.svg" alt="error">
+          <h3>All-In-One App</h3>
+          <p>Upload files, share and edit them, and create teams - all in one place.</p>
+        </div>
+        <div class="column-xhkggz">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/5cd916c77bf6.svg" alt="error">
+          <h3>Renewable Energies</h3>
+          <p>Azury partially relies on renewable energy and is therefore cleaner than most other websites.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="upload-773mr8">
+      <div class="text-39c872">
+        <h2>Upload some cool stuff</h2>
+        <p>Start sharing without an account right now. Sign up for an account <a href="/app">here</a> to upload bigger files.</p>
+      </div>
+      <input type="file" class="fileInput-k5a2gy" hidden>
+      <div class="uploadArea-5l7ckl">
+        <div class="uploadBox-br9x2l">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/12e79cc19a75.svg" alt="error">
+          <p>Up to 25 MB</p>
+        </div>
+        <div class="successBox-gc64cf">
+          <i class="fas fa-file-check"></i>
+          <h1><span class="fileName-bvt5y8">File</span><small class="fileType-s9l4li">.png</small></h1>
+          <button class="copyLink-zpswcu btn-j85yzo">Copy Link</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-xbjh68">
+      <%- include('../partials/footer.ejs') %>
+    </footer>
+    
+    <%- include('../partials/cookie-notice'); %>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>

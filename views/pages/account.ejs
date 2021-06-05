@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - My Account</title>
+    <meta content="Azury - My Account" property="og:title">
+    <meta content="Azury - My Account" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <div class="mobileSpoiler-1mb3vv">
+      <i class="fas fa-mobile"></i>
+      <p>Azury is not yet ready for mobile devices.</p>
+    </div>
+    
+    <div class="app">
+      <%- include('../partials/sidenavigation'); %>
+      <div class="sidebar-rwlef6">
+        <div class="links-sxdz75">
+          <h3>User Settings</h3>
+          <div class="link-75c2f3">
+            My Account
+          </div>
+          <div class="link-75c2f3">
+            Subscriptions
+          </div>
+          <div class="link-75c2f3">
+            Privacy & Safety
+          </div>
+          <div class="separator-vc3odv"></div>
+          <h3>App Settings</h3>
+          <div class="link-75c2f3">
+            Appearance
+          </div>
+          <div class="link-75c2f3">
+            Advanced
+          </div>
+          <div class="separator-vc3odv"></div>
+          <h3>Developer Settings</h3>
+          <div class="link-75c2f3">
+            Manage Access
+          </div>
+          <div class="link-75c2f3">
+            Addons
+          </div>
+          <div class="separator-vc3odv"></div>
+          <h3>Service</h3>
+          <div class="link-75c2f3">
+            Change Log
+          </div>
+        </div>
+
+        <div class="version-5llh09">
+          Stable <%= version %>
+        </div>
+      </div>
+    
+      <div class="container-dzrjwb">
+        <%- include('../partials/navigation'); %>
+    
+        <div class="wrapper-s3en1r">
+          <div class="container-ahg65x scroller-ffigeh" data-aos="fade-up">
+            <div class="wrapper-40j482">
+              <h1 class="title-o67asw">My Account</h1>
+              <div class="userWrapper-vjkqic">
+                <div class="column-o8n24w">
+                  <img src="https://cdn.discordapp.com/avatars/<%= u.id %>/<%= u.avatar %>" alt="error">
+                  <h1><%= u.username %><small>#<%= u.discriminator %></small></h1>
+                  <div class="row-9hqhf7">
+                    <% if (user.flags.includes('0')) { %>
+                      <div class="badges-0sk43k badge-ra8h1v">
+                        <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/7b0ee0bcf5cd.svg" alt="error">
+                      </div>
+                    <% } if (user.flags.includes('1')) { %>
+                      <div class="badges-0sk43k badge-6r8c5b">
+                        <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/7278be0556c6.png" alt="error">
+                      </div>
+                    <% } if (user.flags.includes('2')) { %>
+                      <div class="badges-0sk43k badge-f3lamf">
+                        <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/8bd23ab9f9ac.svg" alt="error">
+                      </div>
+                    <% } if (user.flags.includes('3')) { %>
+                      <div class="badges-0sk43k badge-sen7ms">
+                        <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/033d9e19cde2.svg" alt="error">
+                      </div>
+                    <% } %>
+                  </div>
+                </div>
+                <div class="information-kdg4xp">
+                  <div class="row-p7hg7j">
+                    <div class="column-xl99n2">
+                      <i class="fal fa-fingerprint"></i>
+                      <div class="name-e3cyok">
+                        <h3>User ID</h3>
+                        <p><%= u.id %></p>
+                      </div>
+                    </div>
+                    <i class="fas fa-copy copy-aozx9w" onclick="copy('<%= u.id %>')"></i>
+                  </div>
+                  <div class="row-p7hg7j">
+                    <div class="column-xl99n2">
+                      <i class="fal fa-text"></i>
+                      <div class="name-e3cyok">
+                        <h3>Typeface</h3>
+                        <p class="activeTypeface-coo1pw">Poppins</p>
+                      </div>
+                    </div>
+                    <button class="btn-j85yzo font-uvhhoh">Edit</button>
+                  </div>
+                  <div class="row-p7hg7j">
+                    <div class="column-xl99n2">
+                      <i class="fal fa-tint"></i>
+                      <div class="name-e3cyok">
+                        <h3>Accent Color</h3>
+                        <p class="activeAccentColor-amipma">Blurple</p>
+                      </div>
+                    </div>
+                    <div class="accentColor-mqmnem"></div>
+                  </div>
+                  <div class="row-p7hg7j">
+                    <div class="column-xl99n2">
+                      <i class="fal fa-lock-alt"></i>
+                      <div class="name-e3cyok">
+                        <h3>Access Token</h3>
+                        <p><%= user.token %></p>
+                      </div>
+                    </div>
+                    <i class="fas fa-copy copy-aozx9w" onclick="copy('<%= user.token %>')"></i>
+                  </div>
+                </div>
+                <div class="footerSettings-n3op5b">
+                  <button class="btn-kFpsaU userData-jej4ui">View Data</button>
+                  <a onclick="deleteUserWarning()">Delete Account</a>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div id="typefacesDropdown" class="actions-1asr66">
+        <div class="action-m9sypr poppins" onclick="setTypeface('poppins')">
+          Poppins (Default)
+        </div>
+        <div class="action-m9sypr open-sans" onclick="setTypeface('open-sans')">
+          Open Sans
+        </div>
+        <div class="action-m9sypr roboto" onclick="setTypeface('roboto')">
+          Roboto
+        </div>
+        <div class="action-m9sypr playfair-display" onclick="setTypeface('playfair-display')">
+          Playfair Display
+        </div>
+        <div class="action-m9sypr montserrat" onclick="setTypeface('montserrat')">
+          Montserrat
+        </div>
+        <div class="action-m9sypr raleway" onclick="setTypeface('raleway')">
+          Raleway
+        </div>
+        <div class="action-m9sypr newsreader" onclick="setTypeface('newsreader')">
+          Newsreader
+        </div>
+        <div class="action-m9sypr indie-flower" onclick="setTypeface('indie-flower')">
+          Indie Flower
+        </div>
+      </div>
+
+      <div id="accentColorDropdown">
+        <div class="selectAccentColor-kmrufb blurple" onclick="setAccentColor('blurple')"></div>
+        <div class="selectAccentColor-kmrufb green" onclick="setAccentColor('green')"></div>
+        <div class="selectAccentColor-kmrufb red" onclick="setAccentColor('red')"></div>
+        <div class="selectAccentColor-kmrufb purple" onclick="setAccentColor('purple')"></div>
+        <div class="selectAccentColor-kmrufb blue" onclick="setAccentColor('blue')"></div>
+      </div>
+    </div> 
+
+    <%- include('../partials/popups') %>
+    <%- include('../partials/cookie-notice') %>
+    <script>
+      interactiveTip ('language-2dw452', 'languageDropdown', 'right')
+      interactiveTip ('font-uvhhoh', 'typefacesDropdown', 'right')
+      sidebarTip ('badge-ra8h1v', 'Employee', 'top')
+      sidebarTip ('badge-6r8c5b', 'Partner', 'top')
+      sidebarTip ('badge-f3lamf', 'Bug Hunter', 'top')
+      sidebarTip ('badge-sen7ms', 'Verified Developer', 'top')
+
+      const dropdown = document.getElementById('accentColorDropdown')
+      dropdown.style.display = 'flex'
+tippy('.accentColor-mqmnem', {
+  content: dropdown,
+  animation: 'scale-subtle',
+  theme: 'reallydark',
+  placement: 'top',
+  interactive: true,
+  trigger: 'click',
+  interactiveBorder: 0,
+  inlinePositioning: true
+})
+    </script>
+    <%- include('../partials/tips'); %>
+  </body>
+</html>

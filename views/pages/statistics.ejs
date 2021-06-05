@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Statistics</title>
+    <meta content="Azury - Statistics" property="og:title">
+    <meta content="Azury - Statistics" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">  
+    <header class="header-i5rlgr">
+      <%- include('../partials/header.ejs') %>
+    </header>
+
+    <div class="statistics-y4gosr">
+      <h1>Statistics</h1>
+
+      <div class="wrapper-1nylxy">
+        <div class="column-drax6b">
+          <i class="fas fa-user"></i>
+          <h3>Members</h3>
+          <p class="users-n65t14">Loading...</p>
+        </div>
+        <div class="column-drax6b">
+          <i class="fas fa-users"></i>
+          <h3>Teams</h3>
+          <p class="teams-9bt3d9">Loading...</p>
+        </div>
+        <div class="column-drax6b">
+          <i class="fas fa-folder"></i>
+          <h3>Files</h3>
+          <p class="uploads-c4zynu">Loading...</p>
+        </div>
+        <div class="column-drax6b">
+          <i class="fas fa-copy"></i>
+          <h3>Shared Files</h3>
+          <p class="teamUploads-jnvnxq">Loading...</p>
+        </div>
+        <div class="column-drax6b">
+          <i class="fas fa-folder-open"></i>
+          <h3>Accountless Files</h3>
+          <p class="accountlessUploads-3vgac2">Loading...</p>
+        </div>
+        <div class="column-drax6b">
+          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/cc6fba1e3d0c.svg" alt="error">
+          <h3>Discord Members</h3>
+          <p class="discordMembers-i622p1">Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-xbjh68">
+      <%- include('../partials/footer.ejs') %>
+    </footer>
+    
+    <%- include('../partials/cookie-notice'); %>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>
