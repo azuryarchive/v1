@@ -310,6 +310,7 @@ async function dashFiles(req, type) {
 // ---------------- TEAM ---------------- //
 
 async function dashTeam(id) {
+  if (validObject(id) == false) return false
   const cached = teamCache.get(id)
 
   let team
