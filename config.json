@@ -1,6 +1,4 @@
 {
-  "website": "https://azury.gg",
-
   "scopes": ["identify"],
   "discordServer": "680782208725942345",
 
