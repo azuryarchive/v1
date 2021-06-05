@@ -6,7 +6,7 @@
     <meta content="Azury - Team <%= team.name %>" property="og:title">
     <meta content="Azury - Team <%= team.name %>" property="twitter:title">
 
-    <%- include('../../partials/meta'); %>
+    <%- include('../partials/meta'); %>
   </head>
 
   <body oncontextmenu="return false;">
@@ -16,7 +16,7 @@
     </div>
     
     <div class="app">
-      <%- include('../../partials/sidenavigation'); %>
+      <%- include('../partials/sidenavigation'); %>
       <div class="sidebar-rwlef6">
         <div class="links-sxdz75 wrapper-y0yo96">
           <div class="teamSettings-rqa973">
@@ -73,7 +73,7 @@
       </div>
   
       <div class="container-dzrjwb">
-        <%- include('../../partials/navigation'); %>
+        <%- include('../partials/navigation'); %>
     
         <div class="wrapper-s3en1r">
           <div class="container-ahg65x scroller-ffigeh" data-aos="fade-up">
@@ -186,14 +186,14 @@
       </div>
     </div>
 
-    <%- include('../../partials/popups') %>
-    <%- include('../../partials/cookie-notice') %>
+    <%- include('../partials/popups') %>
+    <%- include('../partials/cookie-notice') %>
     <script>
       sidebarTip ('kick-r0tb95', 'Kick User', 'top')
 sidebarTip ('owner-ala9xf', 'Team Owner', 'top')
 sidebarTip ('leave-ehep0n', 'Leave Team', 'top')
 interactiveTip ('settings-ex8tpq', 'teamSettingsDropdown', 'bottom')
     </script>
-    <%- include('../../partials/tips'); %>
+    <%- include('../partials/tips'); %>
   </body>
 </html>
