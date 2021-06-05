@@ -1,0 +1,135 @@
+.sideNavigation-5f72an {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: calc(100% - 30px);
+  max-height: calc(100% - 30px);
+  padding: 15px 0;
+  background: $background-secondary-alt;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.item-kmuqf5 {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $background-secondary;
+  font-size: 20px;
+  color: $text;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $header;
+    background: $background-primary;
+  }
+}
+
+.separator-cbh0bj {
+  width: 40%;
+  height: 2px;
+  background: $background-secondary;
+  margin: 5px 0;
+}
+
+.team-g6ihe4 {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+    border-radius: 50%;
+  }
+}
+
+.icon-g0shac {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $background-secondary;
+  font-size: 20px;
+  color: $text;
+  transition: .3s;
+
+  &:hover {
+    background: $background-primary;
+  }
+}
+
+.listItem-dasxb0 {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  .active {
+    .item-s5gj8d {
+      display: block;
+      height: 40px;
+      animation: animation-d1ae8b .5s;
+
+      &:hover {
+        display: block;
+        height: 40px;
+      }
+    }
+
+    .item-kmuqf5 {
+      background: $background-primary;
+      color: $header;
+    }
+  }
+}
+
+.item-s5gj8d {
+  position: absolute;
+  display: none;
+  z-index: 3;
+  width: 8px;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+  margin-left: -4px;
+  left: 0;
+  background: $header;
+  transition: .3s;
+}
+
+.listItemInner-ihlzoe:hover .item-s5gj8d {
+  display: block;
+  height: 20px;
+}
+
+@keyframes animation-d1ae8b {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 40px;
+  }
+}
