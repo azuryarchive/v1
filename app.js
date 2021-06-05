@@ -274,8 +274,8 @@ app.get('/account', checkAuth, async (req, res) => {
   }
 })
 
-app.get('/team/:id', checkAuth, async (req, res) => {
-  const team = await dashTeam(req)
+app.get('/team/:team', checkAuth, async (req, res) => {
+  const team = await dashTeam(req.params.team)
   const teams = await dashTeams(req.user.id)
 
   if (team === false || teams === false) {
