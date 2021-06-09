@@ -118,15 +118,18 @@
 }
 
 .addTeam-p26mw7 {
-  background: $blurple;
-  color: $white !important;
-  transition: .3s;
-
-  &:hover {
-    background: $blurple-light;
-  }
-
-  &:active {
-    background: $blurple-secondary;
+  div {
+    background: $blurple;
+    color: $white !important;
+    transition: .3s;
+    border: none !important;
+  
+    &:hover {
+      background: $blurple-light;
+    }
+  
+    &:active {
+      background: $blurple-secondary;
+    }
   }
 }

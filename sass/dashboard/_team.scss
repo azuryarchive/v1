@@ -13,19 +13,20 @@
   height: 60px;
   width: calc(100% - 30px);
   padding: 0 15px;
-  background: $background-secondary-alt;
-}
+  // background: $background-secondary-alt;
 
-.teamSettings-rqa973 h1 {
-  font-size: 18px;
-  font-weight: 500;
-  overflow: hidden;
-  line-height: 1.2;
-  white-space: nowrap;
-  display: inline-block;
-  max-width: 240px;
-  text-overflow: ellipsis;
-  color: $header;
+  h1 {
+    font-size: 18px;
+    font-weight: 500;
+    overflow: hidden;
+    line-height: 1.4;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 240px;
+    text-overflow: ellipsis;
+    color: $header;
+    opacity: .99;
+  }
 }
 
 .options-a2f0t6 {
@@ -57,10 +58,8 @@
   width: calc(100% - 30px);
   height: calc(100% - 150px);
   max-height: calc(100% - 150px);
-  background: $background-secondary;
+  // background: $background-secondary;
   overflow-y: scroll;
-  border-top-left-radius: 28px;
-  border-bottom-left-radius: 28px;
   padding: 15px 10px 15px 15px;
 }
 
@@ -120,10 +119,10 @@
   align-items: center;
   justify-content: space-between;
   transition: .3s;
-}
 
-.member-4x4de0:hover {
-  background: $interactive-hover;
+  &:hover {
+    background: $background-tertiary;
+  }
 }
 
 .memberInfo-it8aao {

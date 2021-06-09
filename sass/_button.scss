@@ -5,25 +5,26 @@ button {
   min-width: 60px;
   font-size: 14px;
   white-space: nowrap;
-  padding: 12px 20px;
+  padding: 11px 20px;
   background: 0 0;
   border-image: initial;
-  border-radius: 32px;
+  border-radius: 3px;
+  opacity: .99;
   transition: .3s;
   cursor: pointer;
   box-shadow: $shadow-bottom;
 }
 
 .btn-j85yzo {
-  background: var(--brand);
+  background: $blurple;
   color: $white;
 
   &:hover {
-    background: var(--brand-secondary);
+    background: $blurple-light;
   }
 
   &:active {
-    background: var(--brand-tertiary);
+    background: $blurple-secondary;
   }
 }
 
