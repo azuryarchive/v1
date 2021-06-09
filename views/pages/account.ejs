@@ -20,44 +20,21 @@
       <div class="sidebar-rwlef6">
         <div class="links-sxdz75">
           <h3>User Settings</h3>
-          <div class="link-75c2f3">
-            My Account
-          </div>
-          <div class="link-75c2f3">
-            Subscriptions
-          </div>
-          <div class="link-75c2f3">
-            Privacy & Safety
-          </div>
-          <div class="separator-vc3odv"></div>
+          <div class="link-75c2f3" onclick="tab('my-account')">My Account</div>
+          <div class="link-75c2f3" onclick="tab('subscriptions')">Subscriptions</div>
+          <div class="link-75c2f3" onclick="tab('privacy')">Privacy & Safety</div>
           <h3>App Settings</h3>
-          <div class="link-75c2f3">
-            Appearance
-          </div>
-          <div class="link-75c2f3">
-            Advanced
-          </div>
-          <div class="separator-vc3odv"></div>
+          <div class="link-75c2f3" onclick="tab('appearance')">Appearance</div>
+          <div class="link-75c2f3" onclick="tab('advanced')">Advanced</div>
           <h3>Developer Settings</h3>
-          <div class="link-75c2f3">
-            Manage Access
-          </div>
-          <div class="link-75c2f3">
-            Addons
-          </div>
-          <div class="separator-vc3odv"></div>
+          <div class="link-75c2f3" onclick="tab('access')">Manage Access</div>
           <h3>Service</h3>
-          <div class="link-75c2f3">
-            Change Log
-          </div>
+          <div class="link-75c2f3" onclick="window.location.href='/changelog'">Change Log</div>
         </div>
-
-        <div class="version-5llh09">
-          Stable <%= version %>
-        </div>
+        <div class="version-5llh09">Stable <%= version %></div>
       </div>
     
-      <div class="container-dzrjwb">
+      <div class="container-ivnfmj">
         <%- include('../partials/navigation'); %>
     
         <div class="wrapper-s3en1r">
