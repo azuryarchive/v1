@@ -3,7 +3,7 @@
   align-items: left;
   justify-content: space-between;
   flex-direction: column;
-  background: $background-secondary;
+  background: #18191C;
   position: absolute;
   bottom: 0;
   left: 80px;
@@ -26,18 +26,19 @@
   flex-direction: column;
 
   h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     color: $header;
     opacity: .99;
-    margin: 13px 0 15px 30px;
+    margin: 15px 0 10px 30px;
     text-align: left;
   }
 }
 
 .version-5llh09 {
   font-size: 14px;
-  color: $text-darker;
+  color: $text-dark;
+  opacity: .99;
 }
 
 .link-75c2f3 {
@@ -57,24 +58,17 @@
   transition: .3s;
 
   &:hover {
-    background: $interactive-hover;
+    background: rgb(41, 43, 47, .5);
     color: $text;
   }
 
   &:active {
-    background: $interactive-click;
+    background: $background-secondary-alt;
     color: $header;
   }
 
   .active {
-    background: $interactive-active;
-    color: $header;
+    background: $blurple;
+    color: $white;
   }
-}
-
-.separator-vc3odv {
-  width: 60%;
-  height: 1px;
-  background: $background-primary-alt;
-  margin: 3px 20% 5px 20%;
 }

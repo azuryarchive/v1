@@ -29,9 +29,9 @@ button {
 
 .btn-kFpsaU {
   color: $white;
-  background: $grey;
+  background: rgba(255,255,255,.15);
 
   &:hover {
-    background: $grey-secondary;
+    background: rgba(255,255,255,.2);
   }
 }

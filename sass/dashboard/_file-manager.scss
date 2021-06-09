@@ -6,16 +6,16 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
-  background: $background-tertiary;
 }
 
 .searchbar-7zbruk {
   width: 400px;
-  background: $background-secondary-alt;
   border-radius: 48px;
   padding: 12px 20px;
   font-size: 16px;
   color: $text;
+  border: solid 2px $background-secondary-alt;
+  background: transparent;
 }
 
 .options-sf1c0v {
@@ -103,7 +103,7 @@
   height: 200px;
   padding: 0 25px;
   border-radius: 28px;
-  background: $background-secondary-alt;
+  border: solid 2px $background-secondary-alt;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,15 +277,17 @@
   color: $text-dark;
   padding: 10px 15px;
   width: calc(100% - 30px);
-  border-radius: 2px;
+  border-radius: 3px;
+  margin-bottom: 2px;
   font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: left;
+  transition: .3s;
 
   &:hover {
-    background: var(--brand);
+    background: rgba(255,255,255,.05);
     color: $header;
 
     i {
@@ -294,12 +296,16 @@
   }
 
   &:active {
-    background: var(--brand-secondary);
+    background: rgba(255,255,255,.1);
     color: $header;
 
     i {
       color: $header;
     }
+  }
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
   }
 
   i {
@@ -308,8 +314,15 @@
   }
 }
 
-.danger-hkfr30:hover {
-  background: $red;
+.danger-hkfr30 {
+  &:hover {
+    color: hsl(359, 74%, 68%);
+  }
+
+  &:active {
+    background: $red;
+    color: $white;
+  }
 }
 
 .separator-3i6ltg {
@@ -330,8 +343,7 @@
   z-index: 9;
   width: 400px;
   height: 100%;
-  background: $background-secondary-alt;
-  border-left: solid 2px $background-tertiary;
+  border-left: solid 2px $background-secondary-alt;
 }
 
 .spinnerWrapper-8dg92z {
@@ -400,16 +412,18 @@
 
   span {
     font-size: 18px;
-    color: $text-dark;
+    color: $text-darker;
     line-height: 1.2;
     margin-bottom: 5px;
+    opacity: .99;
   }
 
   p {
     font-size: 20px;
-    color: $header;
+    color: $text;
     margin-bottom: 15px;
     line-height: 1.2;
+    opacity: .99;
   }
 }
 

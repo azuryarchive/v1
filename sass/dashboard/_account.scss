@@ -29,7 +29,6 @@
   border-radius: 28px;
   padding: 20px;
   margin: 20px;
-  background: $background-secondary;
 }
 
 .settingsWrapperInner-zqb92n {
@@ -89,7 +88,6 @@
 }
 
 .information-kdg4xp {
-  background: $background-secondary;
   padding: 20px;
   border-radius: 28px;
   display: flex;
@@ -108,14 +106,14 @@
 }
 
 .userWrapper-vjkqic {
-  background: $background-secondary;
+  background: rgba(255,255,255,.05);
   padding: 20px;
   border-radius: 28px;
   margin-top: 30px;
 }
 
 .information-kdg4xp {
-  background: $background-primary;
+  background: rgba(255,255,255,.05);
 }
 
 .column-o8n24w {
@@ -297,10 +295,11 @@
   color: $red;
   cursor: pointer;
   margin-left: 20px;
-}
+  transition: .3s;
 
-.footerSettings-n3op5b a:hover {
-  text-decoration: underline;
+  &:hover {
+    color: hsl(359, 74%, 68%);
+  }
 }
 
 .comingSoon-k6q8z0 {

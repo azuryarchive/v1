@@ -21,18 +21,17 @@ $header: #FFFFFF;
 $text: #DCDDDE;
 $text-dark: #B9BBBE;
 $text-darker: #72767D;
-$blurple: #5966f3;
-$blurple-secondary: #4651c3;
-$blurple-tertiary: #3b44a5;
 $text-darkest: #4F5660;
 $text-link: #00B0F4;
 
 $background-primary: #36393F;
 $background-primary-alt: #3E4147;
 $background-secondary: #2F3136;
-$background-secondary-alt: #292B2F;
+$background-secondary-alt: #25272B;
 $background-tertiary: #202225;
 $background-tertiary-alt: #18191C;
+
+$gradient: linear-gradient(to bottom right, #A764ED, #E292AA);
 
 $interactive-hover: #34373c;
 $interactive-click: #37393f;
@@ -48,10 +47,22 @@ $white: #FFFFFF;
 $grey: #4F545C;
 $grey-secondary: #72767D;
 
+// -------------------------------- NEW THEME -------------------------------- //
+
+$bg-darkest: #0B0C0F;
+$bg-darker: #101114;
+$bg-dark: #18191C;
+$bg: #1A1B1E;
+
+$blurple: #5966F3;
+$blurple-secondary: #4651C3;
+$blurple-tertiary: #3B44A5;
+$blurple-light: #7A84F5;
+
 $gold: #CFA76B;
 $silver: #A7ABAD;
 $bronze: #EBB487;
-	
+
 $shadow-bottom: 0px 4px 4px rgba(0, 0, 0, .16);
 $shadow-all: 0 8px 15px rgba(0, 0, 0, .2);
 
@@ -73,6 +84,7 @@ body, html {
 	scroll-behavior: smooth;
 	user-select: none;
   font-family: $font;
+  background: $background-tertiary-alt;
 }
 
 * {
@@ -86,7 +98,7 @@ body, html {
 	text-decoration: none;
 	list-style: none;
   font-family: inherit;
-	font-weight: 400;
+  font-weight: 400;
 }
 
 svg {
@@ -168,11 +180,22 @@ svg {
 // -------------------------------- DARK TIPPY -------------------------------- //
 
 .tippy-box[data-theme~=dark] {
-  background: $background-secondary-alt;
-  color: $text;
+  background: $background-secondary;
+  color: $header;
   font-size: 14px;
-  padding: 5px;
+  padding: 4px;
   border-radius: 5px;
+  box-shadow: $shadow-bottom;
+  text-align: left;
+}
+
+/* .tippy-box[data-theme~=dark] {
+  background: $background-secondary;
+  color: $header;
+  font-size: 16px;
+  padding: 3px 3px;
+  opacity: .99;
+  border-radius: 3px;
   box-shadow: $shadow-bottom;
   text-align: left;
 
@@ -208,7 +231,7 @@ svg {
   > .tippy-svg-arrow {
     fill: $background-secondary-alt;
   }
-}
+} */
 
 // -------------------------------- REALLY DARK TIPPY -------------------------------- //
 
@@ -262,12 +285,11 @@ svg {
   font-size: 14px;
   padding: 5px 0;
   border-radius: 5px;
-  border: solid 2px $background-tertiary-alt;
   box-shadow: $shadow-bottom;
   text-align: left;
 
   > .tippy-backdrop {
-    background: $background-secondary-alt;
+    background: $bg;
   }
 }
 

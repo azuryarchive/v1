@@ -10,7 +10,7 @@
   height: calc(100% - 30px);
   max-height: calc(100% - 30px);
   padding: 15px 0;
-  background: $background-secondary-alt;
+  border-right: solid 2px $background-secondary-alt;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -21,13 +21,13 @@
 }
 
 .item-kmuqf5 {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: $background-secondary;
+  border: solid 2px $background-secondary-alt;
   font-size: 20px;
   color: $text;
   transition: .3s;
@@ -35,14 +35,20 @@
 
   &:hover {
     color: $header;
-    background: $background-primary;
+    background: $background-secondary-alt;
+  }
+
+  &:active {
+    color: $header;
+    border: $background-secondary;
+    background: $background-secondary;
   }
 }
 
 .separator-cbh0bj {
-  width: 40%;
+  width: 30%;
   height: 2px;
-  background: $background-secondary;
+  background: $background-secondary-alt;
   margin: 5px 0;
 }
 
@@ -64,20 +70,29 @@
 }
 
 .icon-g0shac {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $background-secondary;
+  border: solid 2px $background-secondary-alt;
   font-size: 20px;
   color: $text;
   transition: .3s;
 
   &:hover {
-    background: $background-primary;
+    background: $background-secondary-alt;
   }
+
+  &:active {
+    background: $background-secondary;
+    border-color: $background-secondary;
+  }
+}
+
+.teams-9cu6tq {
+  height: 44px;
 }
 
 .listItem-dasxb0 {
@@ -87,24 +102,6 @@
   justify-content: center;
   position: relative;
   width: 100%;
-
-  .active {
-    .item-s5gj8d {
-      display: block;
-      height: 40px;
-      animation: animation-d1ae8b .5s;
-
-      &:hover {
-        display: block;
-        height: 40px;
-      }
-    }
-
-    .item-kmuqf5 {
-      background: $background-primary;
-      color: $header;
-    }
-  }
 }
 
 .item-s5gj8d {
@@ -120,16 +117,16 @@
   transition: .3s;
 }
 
-.listItemInner-ihlzoe:hover .item-s5gj8d {
-  display: block;
-  height: 20px;
-}
+.addTeam-p26mw7 {
+  background: $blurple;
+  color: $white !important;
+  transition: .3s;
 
-@keyframes animation-d1ae8b {
-  0% {
-    height: 20px;
+  &:hover {
+    background: $blurple-light;
   }
-  100% {
-    height: 40px;
+
+  &:active {
+    background: $blurple-secondary;
   }
 }
