@@ -45,7 +45,7 @@
               <% if (files != null && files != 'undefined' && files != '') { %>
                 <div class="wrapperInner-xtc435">
                   <% files.forEach(function(file) { %>
-                    <div data-template="template-<%= file._id %>" class="file-lemhr3 item-96xnxf <% if (file.favorite == true) { %>favorite<% } %>">
+                    <div data-template="template-<%= file._id %>" class="file-lemhr3 item-96xnxf <% if (file.flags.includes('favorite')) { %>favorite<% } %>">
                       <% if (file.type == '.zip' || file.type == '.rar') { %>
                         <i class="fas fa-file-archive"></i>    
                       <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
