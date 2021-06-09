@@ -259,7 +259,7 @@ app.get('/archive', checkAuth, async (req, res) => {
 })
 
 app.get('/account', checkAuth, async (req, res) => {
-  const user = await dashUser(req.user.id)
+  /* const user = await dashUser(req.user.id)
   const teams = await dashTeams(req.user.id)
 
   if (user === false || teams === false) {
@@ -271,7 +271,9 @@ app.get('/account', checkAuth, async (req, res) => {
       teams: teams,
       version: config.version
     })
-  }
+  } */
+
+  res.redirect('/inventory')
 })
 
 app.get('/team/:team', checkAuth, async (req, res) => {
