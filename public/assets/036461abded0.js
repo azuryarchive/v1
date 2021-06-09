@@ -762,7 +762,8 @@ function tip (item, content, placement) {
     content: content,
     animation: 'scale-subtle',
     theme: 'dark',
-    placement: placement
+    placement: placement,
+    arrow: false
   })
 }
 
