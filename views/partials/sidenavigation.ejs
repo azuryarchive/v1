@@ -2,19 +2,16 @@
   <div id="inventoryItem" class="listItem-dasxb0">
     <div class="item-kmuqf5 listItemInner-ihlzoe item-4f7rqs" onclick="window.location.href='/inventory'">
       <i class="fas fa-copy"></i>
-      <span class="item-s5gj8d"></span>
     </div>
   </div>
   <div id="archiveItem" class="listItem-dasxb0">
     <div class="item-kmuqf5 listItemInner-ihlzoe item-e6vja0" onclick="window.location.href='/archive'">
       <i class="fas fa-archive"></i>
-      <span class="item-s5gj8d"></span>
     </div>
   </div>
   <div id="trashItem" class="listItem-dasxb0">
     <div class="item-kmuqf5 listItemInner-ihlzoe item-e0lknt" onclick="window.location.href='/trash'">
-      <i class="fas fa-trash-alt"></i>
-      <span class="item-s5gj8d"></span>
+      <i class="fas fa-trash"></i>
     </div>
   </div>
 
@@ -26,7 +23,7 @@
         <% if (team.icon != 0) { %>
           <img src="https://cdn.azury.gg/icons/<%= team.icon %>" alt="error">
         <% } else { %>
-          <div class="icon-g0shac">
+          <div class="icon-g0shac teams-9cu6tq">
             <%= team.name.charAt(0) %>
           </div>
         <% } %>
@@ -37,9 +34,8 @@
   <% }) %>
 
   <div class="listItem-dasxb0">
-    <div class="item-kmuqf5 listItemInner-ihlzoe item-j86qw1" onclick="createNewTeam()">
+    <div class="item-kmuqf5 listItemInner-ihlzoe item-j86qw1 addTeam-p26mw7" onclick="createNewTeam()">
       <i class="fal fa-plus"></i>
-      <span class="item-s5gj8d"></span>
     </div>
   </div>
 </div>
