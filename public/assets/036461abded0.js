@@ -771,8 +771,9 @@ function sidebarTip (item, content, placement) {
   tippy(`.${item}`, {
     content: content,
     animation: 'scale-subtle',
-    theme: 'reallydark',
-    placement: placement
+    theme: 'darker',
+    placement: placement,
+    arrow: false
   })
 }
 
