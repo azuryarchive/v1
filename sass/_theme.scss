@@ -235,7 +235,7 @@ svg {
 
 // -------------------------------- REALLY DARK TIPPY -------------------------------- //
 
-.tippy-box[data-theme~=reallydark] {
+.tippy-box[data-theme~=light] {
   background: $background-tertiary-alt;
   color: $header;
   font-size: 14px;
