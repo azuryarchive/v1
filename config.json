@@ -9,7 +9,7 @@
 
   "uploadLimit": "100",
   "accountlessUploadLimit": "50",
-  "teamLimit": "1",
+  "teamLimit": "2",
   "teamMemberLimit": "50",
 
   "discord": "https://discord.gg/DVs6JjmpsX",
