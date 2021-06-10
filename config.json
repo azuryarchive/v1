@@ -8,7 +8,7 @@
   "version": "1.0.0",
 
   "uploadLimit": "100",
-  "accountlessUploadLimit": "100",
+  "accountlessUploadLimit": "50",
   "teamLimit": "1",
   "teamMemberLimit": "50",
 
