@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: $background-secondary;
+  background: $background-tertiary;
 
   .row-23omrp {
     label {
@@ -80,20 +80,22 @@
     border-image: initial;
     outline: 0;
     transition: background-color 150ms ease 0s, border-color, color;
-    background: $background-tertiary;
+    background: $background-secondary;
+    //box-shadow: $shadow-bottom;
     width: calc(60% - 22px);
+    opacity: .99;
     color: $text;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     white-space: nowrap;
-    padding: 7px 20px;
-    border-radius: 32px;
+    padding: 6px 20px;
+    border-radius: 3px;
     margin-right: 10px;
 
     &:focus {
-      border: solid 2px var(--brand);
+      border: solid 2px $blurple;
     }
   }
 
@@ -101,7 +103,9 @@
     font-size: 16px;
     color: $text-dark;
     margin-top: 10px;
-    line-height: 1.2;
+    line-height: 1.3;
+    max-width: 80%;
+    opacity: .99;
   }
 
   .row-5472qw {
@@ -123,6 +127,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    opacity: .99;
 
     &:hover {
       color: $text;
@@ -130,11 +135,12 @@
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     color: $header;
     display: flex;
     align-items: baseline;
+    opacity: .99;
     justify-content: center;
 
     span {
