@@ -240,16 +240,22 @@ function validObject(id) {
   return true
 }
 
-function readableSize(bytes, decimals = 2) {
-  if (bytes == 0) return '0 Bytes'
+function readableSize(unreadableSize) {
+  const length = unreadableSize.length
+  const size = parseInt(unreadableSize)
+  const round = (number, decimalPlaces) => {
+    number = Math.round(number + 'e' + decimalPlaces);
+    return Number(number + 'e' + -decimalPlaces)
+  }
 
-  const k = 1024
-  const dm = decimals < 0 ? 0 : decimals
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-
-  const i = Math.floor(Math.log(bytes) / Math.log(k))
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
+  if (length < 4 && length < 7) return `${size} B`
+  if (length >= 4 && length < 7) return `${round(size / 1000, 2)} KB`
+  if (length >= 7 && length < 10) return `${round(size / 1000000, 2)} MB`
+  if (length >= 10 && length < 13) return `${round(size / 1000000000, 2)} GB`
+  if (length >= 13) return `${round(size / 1000000000000, 2)} TB`
 }
+
+console.log(readableSize('102720468'))
 
 /******************************** DASHBOARD FUNCTIONS ********************************/
 
