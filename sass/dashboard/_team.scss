@@ -13,6 +13,7 @@
   height: 60px;
   width: calc(100% - 30px);
   padding: 0 15px;
+  background: $background-secondary-alt;
   // background: $background-secondary-alt;
 
   h1 {
@@ -20,6 +21,7 @@
     font-weight: 500;
     overflow: hidden;
     line-height: 1.4;
+    padding-top: 4px;
     white-space: nowrap;
     display: inline-block;
     max-width: 240px;
