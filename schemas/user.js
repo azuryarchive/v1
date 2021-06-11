@@ -31,10 +31,6 @@ const userSchema = mongoose.Schema({
   flags: {
     type: [Number]
   },
-  prime_type: {
-    type: Number, 
-    default: 0
-  },
   connections: {
     type: [{}], // [{ discord: userid }, { twitter: userid }, { github: userid }]
   },
