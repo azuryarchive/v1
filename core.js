@@ -733,8 +733,6 @@ async function getFile(req, type) {
         'size': item.size,
         'readableSize': readableSize(item.size),
         'type': item.type,
-        'downloads': item.downloads,
-        'views': item.views,
         'url': `https://azury.gg/t/${item._id}`,
         'uploadedAt': item.createdAt,
         'updatedAt': item.updatedAt
@@ -753,8 +751,6 @@ async function getFile(req, type) {
         'size': upload.size,
         'readableSize': readableSize(upload.size),
         'type': upload.type,
-        'downloads': upload.downloads,
-        'views': upload.views,
         'url': `https://azury.gg/t/${upload._id}`,
         'uploadedAt': upload.createdAt,
         'updatedAt': upload.updatedAt
@@ -776,8 +772,6 @@ async function getFile(req, type) {
         'size': item.size,
         'readableSize': readableSize(item.size),
         'type': item.type,
-        'downloads': item.downloads,
-        'views': item.views,
         'url': `https://azury.gg/u/${item._id}`,
         'uploadedAt': item.createdAt,
         'updatedAt': item.updatedAt
