@@ -124,15 +124,15 @@ app.get('/u/:file', async (req, res) => {
   const data = await getFile(req, 'user')
 
   if (data.code == '200') {
-    const author = await dashDiscordUser(data.author)
+    const author = await dashDiscordUser(data.status.author)
     const user = () => {
       if (req.isAuthenticated()) return req.user
       return 'Logged Out'
     }
 
-    res.render('download', { 
+    res.render('pages/download', { 
       date: dayjs,
-      file: data,
+      file: data.status,
       author: author,
       authenticated: req.isAuthenticated(),
       u: user(req)
@@ -152,9 +152,9 @@ app.get('/a/:file', async (req, res) => {
       return 'Logged Out'
     }
 
-    res.render('download', { 
+    res.render('pages/download', { 
       date: dayjs,
-      file: data,
+      file: data.status,
       author: author,
       authenticated: req.isAuthenticated(),
       u: user(req)
@@ -174,9 +174,9 @@ app.get('/t/:file', async (req, res) => {
       return 'Logged Out'
     }
 
-    res.render('download', { 
+    res.render('pages/download', { 
       date: dayjs,
-      file: data,
+      file: data.status,
       author: author,
       authenticated: req.isAuthenticated(),
       u: user(req)
