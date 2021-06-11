@@ -314,24 +314,24 @@ app.get('/team/:team', checkAuth, async (req, res) => {
 
 /******************************** SOCIAL ********************************/
 
-app.get('/discord', async (req, res) => {
-  res.redirect(301, config.discord)
+app.get('/dc', async (req, res) => {
+  res.redirect(307, config.discord)
 })
 
-app.get('/github', async (req, res) => {
-  res.redirect(301, config.github)
+app.get('/gh', async (req, res) => {
+  res.redirect(307, config.github)
 })
 
-app.get('/twitter', async (req, res) => {
-  res.redirect(301, config.twitter)
+app.get('/tw', async (req, res) => {
+  res.redirect(307, config.twitter)
 })
 
-app.get('/trustpilot', async (req, res) => {
-  res.redirect(301, config.trustpilot)
+app.get('/tp', async (req, res) => {
+  res.redirect(307, config.trustpilot)
 })
 
 app.get('/contact', async (req, res) => {
-  res.redirect(301, 'mailto:support@azury.gg')
+  res.redirect(307, 'mailto:support@azury.gg')
 })
 
 /******************************** NOT FOUND ********************************/
