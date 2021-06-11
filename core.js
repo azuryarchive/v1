@@ -1550,7 +1550,6 @@ async function about() {
     'teams': teams,
     'files': allFiles,
     'staffMembers': config.staffMembers,
-    'primeMembers': 0,
     'storage': storage,
     'readableStorage': readableSize(storage),
     'fetchedAt': Date.now(),
