@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
     default: 0
   },
   flags: {
-    type: [Number]
+    type: [String]
   },
   connections: {
     type: [{}], // [{ discord: userid }, { twitter: userid }, { github: userid }]
