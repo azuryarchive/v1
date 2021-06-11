@@ -825,7 +825,8 @@ function dynamicTip (item, interactive, placement) {
       },
       allowHTML: true,
       animation: 'scale-subtle',
-      theme: 'reallydark',
+      theme: 'dark',
+      arrow: false,
       placement: placement
     }
   }
