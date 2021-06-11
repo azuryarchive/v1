@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Documentation</title>
+    <meta content="Azury - Documentation" property="og:title">
+    <meta content="Azury - Documentation" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <header class="header-7fscvq">
+      <%- include('../partials/header.ejs') %>
+    </header>
+
+    <div class="wrapper-yeqhqx">
+      <div class="document-m1kzbl">
+        <div class="heading-1zf47u">
+          <h1>API</h1>
+        </div>
+
+        <h2>General</h2>
+
+        <p>Currently under construction.</p>
+
+        <!-- <div class="section">
+          <h3>Introduction</h3>
+          <p>
+            This is the official documentation for our API, which gives you access to all features Azury has to offer. If you have no idea how an API works, we recommend reading articles such as <a href="https://www.smashingmagazine.com/2018/01/understanding-using-rest-api" target="_blank">Understanding And Using REST APIs</a> by Zell Liew or <a href="https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples" target="_blank">REST API Tutorial - REST Client, REST Service, and API Calls Explained With Code Examples</a> by Vaibhav Kandwal.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Azury.js</h3>
+          <p>
+            APIs can be difficult. If you plan to integrate Azury in a Node.js App, we recommened using our <a href="https://github.com/azuryofficial/azury.js" target="_blank">JavaScript Library</a>, which is always up-to-date and easily as f*ck to use.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Widget</h3>
+          <p>
+            If you plan to include our service in your static website, we recommend using our <a href="https://github.com/azuryofficial/widget" target="_blank">Widget</a>, which allows you to upload files of up to 50 MB and requires zero setup.
+          </p>
+          <div class="code">
+            &lt;script src=&quot;https://cdn.jsdelivr.net/npm/azury-web@latest/azury-web&quot;&gt;&lt;/script&gt;
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Setup Azury for ShareX</h3>
+          <p>
+            1. Download ShareX from <a href="https://getsharex.com/downloads/" target="_blank">here</a>. <br>
+            2. Download <a href="https://azury.gg/api/sharex" target="_blank">this configuration file</a> and run it. <br>
+            Ok, press <span class="code">Control</span> and <span class="code">Print Screen</span> to share your first file!
+          </p>
+        </div>
+
+        <div class="section">
+          <h3>Base URL</h3>
+          <div class="code">
+            https://azury.gg/api
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Authorization</h3>
+          <p>Operations that require authorization are marked accordingly. Simply add your <span class="code">API Token</span> at the end of the request as shown in the example below.</p>
+          <div class="code">
+            <b>{request_url}</b>?token=<b>{token}</b>
+          </div>
+        </div>
+
+        <h2>Tools</h2>
+
+        <div class="section">
+          <h3>Sharey</h3>
+          <p>
+            <a href="https://github.com/realazury/sharey" target="_blank">Sharey</a> is a powerful addon with a size of less than 1.5 KB that is designed to help you upload files to third parties with ease.
+          </p>
+          <div class="code">
+            &lt;script src=&quot;https://cdn.jsdelivr.net/npm/sharey@1&quot;&gt;&lt;/script&gt;
+          </div>
+        </div>
+
+        <h2>Accountless</h2>
+
+        <div class="section get">
+          <h3>
+            Get Statistics
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-9pxqnp"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /service/statistics
+          </div>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get Badge
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-9pxqnp"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>LINK</span>
+            /badges/a/<b>{file_id}</b>
+          </div>
+          <br>
+          Get badge with a specific theme, default <span class="code">dark</span>.
+          <div class="code">
+            <span>LINK</span>
+            /badges/a/<b>{file_id}</b>?theme=<b>light</b>
+          </div>
+        </div>
+
+        <div class="section post">
+          <h3>
+            Upload New File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /accountless/files/new
+          </div>
+          <p>Parameter Name: <span class="code">upload</span> <br> Parameter Content: <span class="code">file.type</span> <br> Maximum Upload Size: 50 MB</p>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get File Details
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /accountless/files/<b>{file_id}</b>/details
+          </div>
+        </div>
+
+        <h2>User</h2>
+
+        <div class="section post">
+          <h3>
+            Upload New File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /users/files/new
+          </div>
+          <p>Parameter Name: <span class="code">upload</span> <br> Parameter Content: <span class="code">file.type</span> <br> Maximum Upload Size: 100 MB</p>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get Badge
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-9pxqnp"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>LINK</span>
+            /badges/u/<b>{file_id}</b>
+          </div>
+          <br>
+          Get badge with a specific theme, default <span class="code">dark</span>.
+          <div class="code">
+            <span>LINK</span>
+            /badges/u/<b>{file_id}</b>?theme=<b>light</b>
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get Files
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /users/files
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get Teams
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /users/teams
+          </div>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get Short Link
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /users/files/<b>{file_id}</b>/short
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Toggle Archived Status
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /users/files/<b>{file_id}</b>/status/archived/toggle
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Toggle Trashed Status
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /users/files/<b>{file_id}</b>/status/trashed/toggle
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Toggle Favorite Status
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /users/files/<b>{file_id}</b>/status/favorite/toggle
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Clone File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /users/files/<b>{file_id}</b>/clone
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get File Details
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /users/files/<b>{file_id}</b>/details
+          </div>
+        </div>
+
+        <div class="section post">
+          <h3>
+            Rename File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /users/files/<b>{file_id}</b>/rename
+          </div>
+          <p>Parameter Name: <span class="code">name</span> <br> Parameter Content: <span class="code">New Name</span></p>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Delete File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>DELETE</span>
+            /users/files/<b>{file_id}</b>/delete
+          </div>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get User Data
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /users/data
+          </div>
+        </div>
+        
+        <div class="section get">
+          <h3>
+            Delete User
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>DELETE</span>
+            /users/delete
+          </div>
+        </div>
+
+        <h2>Teams</h2>
+
+        <div class="section post">
+          <h3>
+            Upload New File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /teams/<b>{team_id}</b>/files/new 
+          </div>
+          <p>Parameter Name: <span class="code">upload</span> <br> Parameter Content: <span class="code">file.type</span></p>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get Badge
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-9pxqnp"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>LINK</span>
+            /badges/t/<b>{file_id}</b>
+          </div>
+          <br>
+          Get badge with a specific theme, default <span class="code">dark</span>.
+          <div class="code">
+            <span>LINK</span>
+            /badges/t/<b>{file_id}</b>?theme=<b>light</b>
+          </div>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get Short Link
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /teams/files/<b>{file_id}</b>/short
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Clone File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /teams/files/<b>{file_id}</b>/clone
+          </div>
+        </div>
+
+        <div class="section get">
+          <h3>
+            Get File Details
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /teams/files/<b>{file_id}</b>/details
+          </div>
+        </div>
+
+        <div class="section post">
+          <h3>
+            Rename File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /teams/files/<b>{file_id}</b>/rename
+          </div>
+          <p>Parameter Name: <span class="code">name</span> <br> Parameter Content: <span class="code">New Name</span></p>
+        </div>
+        
+        <div class="section delete">
+          <h3>
+            Delete File
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>DELETE</span>
+            /teams/files/<b>{file_id}</b>/delete
+          </div>
+        </div>
+
+        <div class="section post">
+          <h3>
+            Create Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /teams/new
+          </div>
+          <p>Parameter Name: <span class="code">name</span> <br> Parameter Content: <span class="code">Team Name</span></p>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /teams/<b>{team_id}</b>
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get Team Files
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /teams/<b>{team_id}</b>/files
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Get Team Members
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>GET</span>
+            /teams/<b>{team_id}</b>/members
+          </div>
+        </div>
+
+        <div class="section post">
+          <h3>
+            Rename Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>POST</span>
+            /teams/<b>{team_id}</b>/rename
+          </div>
+          <p>Parameter Name: <span class="code">name</span> <br> Parameter Content: <span class="code">New Name</span></p>
+        </div>
+        
+        <div class="section post">
+          <h3>
+            Transfer Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /teams/<b>{team_id}</b>/transfer/<b>{new_owner}</b>
+          </div>
+          <p>You need to provide the <span class="code"></span>User ID of the new owner, not their username.</p>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Leave Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /teams/<b>{team_id}</b>/leave
+          </div>
+        </div>
+        
+        <div class="section delete">
+          <h3>
+            Delete Team
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>DELETE</span>
+            /teams/<b>{team_id}</b>/delete
+          </div>
+        </div>
+
+        <div class="section put">
+          <h3>
+            Add Member
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /teams/<b>{team_id}</b>/members/add/<b>{member_id}</b>
+          </div>
+        </div>
+        
+        <div class="section put">
+          <h3>
+            Remove Member
+            <div class="notices-wf4bjt">
+              <i class="fas fa-shield-check authRequired-wmjez3"></i>
+              <i class="fas fa-clock cooldown-gp65dh"></i>
+            </div>
+          </h3>
+          <div class="code">
+            <span>PUT</span>
+            /teams/<b>{team_id}</b>/members/remove/<b>{member_id}</b>
+          </div>
+        </div>
+
+        -->
+      </div>
+    </div>
+
+    <footer class="footer-ku1fr8">
+      <%- include('../partials/footer.ejs') %>
+    </footer>
+    
+    <%- include('../partials/cookie-notice'); %>
+    <script>
+      sidebarTip ('authRequired-wmjez3', 'Authorization Required', 'top')
+      sidebarTip ('cooldown-gp65dh', 'Limited to 30 Requests per Minute', 'top')
+      sidebarTip ('cooldown-9pxqnp', 'Limited to 1 Request per Hour', 'top')
+    </script>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>
