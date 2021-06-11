@@ -1,0 +1,64 @@
+.navigation-t115wi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 40px;
+  width: calc(100% - 80px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+
+  i {
+    font-size: 20px;
+    color: $text;
+    transition: .3s;
+    margin-left: 15px;
+    cursor: pointer;
+
+    &:hover {
+      color: $header;
+    }
+  }
+}
+
+.row-q5t7ef {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  i {
+    margin: 0 15px 0 0 !important;
+  }
+}
+
+.row-bp4gw2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.separator-qdqlag {
+  width: 2px;
+  background: $background-secondary-alt;
+  margin: 0 25px;
+  height: 20px;
+}
+
+.avatar-3u2m1o {
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+#userDropdown {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

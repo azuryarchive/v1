@@ -1,0 +1,235 @@
+// ---------------- HEADER/FOOTER ---------------- //
+
+.header-i5rlgr {
+  background: $background-tertiary;
+}
+
+.footer-xbjh68 {
+  background: $background-secondary-alt;
+}
+
+// ---------------- HERO ---------------- //
+
+.hero-xe4mq2 {
+  padding: 120px;
+  background: $background-tertiary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 256px;
+    pointer-events: none;
+    margin-left: 120px;
+  }
+}
+
+.column-apecj9 {
+  text-align: left;
+
+  h1 {
+    font-size: 56px;
+    font-weight: 600;
+    color: $header;
+  }
+  p {
+    font-size: 20px;
+    color: $text-darker;
+    margin-top: 20px;
+    line-height: 1.2;
+    max-width: 650px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .hero-xe4mq2 {
+    flex-direction: column-reverse;
+    padding: 120px 30px;
+
+    img {
+      margin-left: 0;
+    }
+  }
+
+  .column-apecj9 {
+    text-align: center;
+    margin-top: 30px;
+
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+// ---------------- FEATURES ---------------- //
+
+.features-inh23y {
+  background: $background-secondary-alt;
+}
+
+.row-2r4hqg {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 60px 0;
+
+  .column-xhkggz {
+    width: 400px;
+    margin: 20px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+
+    img {
+      width: 128px;
+      pointer-events: none;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: $header;
+    }
+
+    p {
+      font-size: 18px;
+      color: $text-darker;
+      line-height: 1.2;
+      max-width: 350px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: $text-darker;
+      line-height: 1.2;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ---------------- UPLOAD AREA ---------------- //
+
+.upload-773mr8 {
+  padding: 120px 0;
+  background: $background-tertiary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-39c872 {
+  text-align: left;
+  margin-right: 150px;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: $header;
+  }
+
+  p {
+    font-size: 18px;
+    color: $text-darker;
+    max-width: 500px;
+    margin-top: 15px;
+    line-height: 1.3;
+  }
+
+  a {
+    color: var(--brand);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.uploadArea-5l7ckl {
+  width: 425px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.uploadBox-br9x2l {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  border: dashed 2px $text-darker;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 28px;
+  transition: .3s;
+
+  &:hover {
+    background: $background-secondary-alt;
+    cursor: pointer;
+  }
+
+  img {
+    width: 128px;
+    pointer-events: none;
+  }
+
+  p {
+    font-size: 18px;
+    color: $header;
+  }
+}
+
+.successBox-gc64cf {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: $background-secondary-alt;
+  height: 100%;
+  width: 100%;
+  border-radius: 28px;
+  border: solid 2px $background-secondary-alt;
+
+	i {
+		font-size: 48px;
+		color: $header;
+		margin-bottom: 30px;
+	}
+
+	h1 {
+		font-size: 32px;
+		color: $header;
+		font-weight: 400;
+		margin-bottom: 15px;
+
+		small {
+			color: $text-darker;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .upload-773mr8 {
+    flex-direction: column;
+  }
+  .text-39c872 {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .uploadArea-5l7ckl {
+    width: 90%;
+  }
+}
