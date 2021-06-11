@@ -27,7 +27,7 @@ mongoose.connect(env.mongo, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
-})
+}).then(console.log('Mongoose was successfully launched.'))
 
 /******************************** RATELIMIT ********************************/
 
@@ -98,6 +98,22 @@ app.get('/logout', async (req, res) => {
 })
 
 /******************************** WEBSITE ********************************/
+
+/*
+// USED TO ADD NEW FIELDS TO EXISTING DOCUMENTS:
+
+app.get('/dev', (req, res) => {
+  teamSchema.updateMany({},
+    { flags: [] },
+    { multi: true }, 
+      function(err, numberAffected){  
+        if (err) console.log(err)
+    })
+
+  console.log('Done')
+})
+*/
+
 function user(req) {
   if (req.isAuthenticated()) return req.user
   return 'Logged Out'
