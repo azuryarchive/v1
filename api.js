@@ -5,6 +5,7 @@ const config = require('./config.json')
 const api = express.Router()
 const fileUpload = require('express-fileupload')
 const core = require('./core.js')
+const cors = require('cors')
 
 /******************************** CONFIGURE ROUTER ********************************/
 
@@ -12,6 +13,7 @@ api.use(fileUpload({
   limits: { fileSize: config.uploadLimit*1024*1024 },
   uploadTimeout: 60000
 }))
+api.use(cors)
 
 /******************************** API ********************************/
 
