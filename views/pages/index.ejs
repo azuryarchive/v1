@@ -9,62 +9,61 @@
     <%- include('../partials/meta'); %>
   </head>
 
-  <body oncontextmenu="return false;">
+  <body oncontextmenu="return false;" class="app-3tqbvz">
     <header class="header-i5rlgr">
       <%- include('../partials/header.ejs') %>
     </header>
 
     <div class="hero-xe4mq2">
       <div class="column-apecj9">
-        <h1>Sharing that you'll enjoy.</h1>
+        <h1>Unlimited File Sharing.</h1>
         <p>Share an unlimited amount of files up to 100 MB each for free within seconds - easily and without intrusive advertising.</p>
       </div>
-      <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/1efe4fae394a.svg" alt="error">
+      <img src="https://cdn.jsdelivr.net/gh/azuryofficial/static@1.1/6322b080acdc.svg" alt="error">
     </div>
 
-    <section class="features-inh23y">
-      <div class="row-2r4hqg">
-        <div class="column-xhkggz">
-          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/7d3760f81ed4.svg" alt="error">
-          <h3>Unlimited Storage</h3>
-          <p>We offer you *unlimited* free storage - without hidden costs and without intrusive advertising.</p>
-        </div>
-        <div class="column-xhkggz">
-          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/02a681bf4179.svg" alt="error">
-          <h3>Collaborate Easily</h3>
-          <p>Create teams easily, invite friends and share files with each other.</p>
-        </div>
-        <div class="column-xhkggz">
-          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/6322b080acdc.svg" alt="error">
-          <h3>All-In-One App</h3>
-          <p>Upload files, share and edit them, and create teams - all in one place.</p>
-        </div>
-        <div class="column-xhkggz">
-          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/5cd916c77bf6.svg" alt="error">
-          <h3>Renewable Energies</h3>
-          <p>Azury partially relies on renewable energy and is therefore cleaner than most other websites.</p>
-        </div>
-      </div>
-    </section>
+    <svg class="wave-26ugbe" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"></path></svg>
 
-    <section class="upload-773mr8">
-      <div class="text-39c872">
-        <h2>Upload some cool stuff</h2>
-        <p>Start sharing without an account right now. Sign up for an account <a href="/app">here</a> to upload bigger files.</p>
-      </div>
-      <input type="file" class="fileInput-k5a2gy" hidden>
-      <div class="uploadArea-5l7ckl">
-        <div class="uploadBox-br9x2l">
-          <img src="https://cdn.jsdelivr.net/gh/azuryofficial/assets/12e79cc19a75.svg" alt="error">
-          <p>Up to 25 MB</p>
+    <div id="statistics" class="statistics-mthyiv">
+      <h2 data-aos="fade-down">Let's Talk in Numbers</h2>
+      <div data-aos="fade-up" class="row-mqrna5">
+        <div class="column-cclmzz">
+          <div class="iconWrapper-irpc4o">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Members</h3>
+          <p>22.291</p>
         </div>
-        <div class="successBox-gc64cf">
-          <i class="fas fa-file-check"></i>
-          <h1><span class="fileName-bvt5y8">File</span><small class="fileType-s9l4li">.png</small></h1>
-          <button class="copyLink-zpswcu btn-j85yzo">Copy Link</button>
+        <div class="column-cclmzz">
+          <div class="iconWrapper-irpc4o">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Teams</h3>
+          <p>7.189</p>
+        </div>
+        <div class="column-cclmzz">
+          <div class="iconWrapper-irpc4o">
+            <i class="fas fa-copy"></i>
+          </div>
+          <h3>Files</h3>
+          <p>12.341</p>
+        </div>
+        <div class="column-cclmzz">
+          <div class="iconWrapper-irpc4o">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Staff Members</h3>
+          <p>38</p>
+        </div>
+        <div class="column-cclmzz">
+          <div class="iconWrapper-irpc4o">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Storage</h3>
+          <p>38.38 TB</p>
         </div>
       </div>
-    </section>
+    </div>
 
     <footer class="footer-xbjh68">
       <%- include('../partials/footer.ejs') %>
@@ -73,7 +72,7 @@
     <%- include('../partials/cookie-notice'); %>
     <% if (authenticated) { %>
       <script>
-        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+        interactiveTip ('avatar-if6jiw", "settingsDropdown-svgdhe", "bottom')
       </script>
     <% } %>
   </body>
