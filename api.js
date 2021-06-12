@@ -13,7 +13,7 @@ api.use(fileUpload({
   limits: { fileSize: config.uploadLimit*1024*1024 },
   uploadTimeout: 60000
 }))
-api.use(cors)
+api.use(cors())
 
 /******************************** API ********************************/
 
