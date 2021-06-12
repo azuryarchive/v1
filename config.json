@@ -5,7 +5,7 @@
   "jsWrapper": "1.1.0",
   "pyWrapper": "1.0.0",
   "staffMembers": "2",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "uploadLimit": "100",
   "accountlessUploadLimit": "50",
