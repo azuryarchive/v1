@@ -1550,7 +1550,7 @@ async function about() {
 
   const data = {
     'version': config.version,
-    'users': users,
+    'members': users,
     'teams': teams,
     'files': allFiles,
     'staffMembers': config.staffMembers,
