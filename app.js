@@ -14,7 +14,7 @@ dayjs.extend(localizedFormat)
 const apiRouter = require('./api.js')
 const app = express()
 const Strategy = require('passport-discord').Strategy
-const { dashUser, dashDiscordUser, getFile, dashFiles, dashTeam, dashTeams } = require('./core')
+const { about, dashUser, dashDiscordUser, getFile, dashFiles, dashTeam, dashTeams } = require('./core')
 
 /******************************** ENVIRONMENT VARIABLES ********************************/
 
@@ -127,7 +127,10 @@ async function fail(error, code, req, res) {
   res.render('pages/error', { authenticated: req.isAuthenticated(), u: user(req), error: error, code: code })
 }
 
-app.get('/', async (req, res) => { page('index', req, res) })
+app.get('/', async (req, res) => {
+  const stats = await about()
+  res.render('pages/index', { authenticated: req.isAuthenticated(), u: user(req), stats: stats.status })
+})
 app.get('/terms', async (req, res) => { page('terms', req, res) })
 app.get('/guidelines', async (req, res) => { page('guidelines', req, res) })
 app.get('/imprint', async (req, res) => { page('imprint', req, res) })
