@@ -34,6 +34,14 @@ const client = new Client()
 client.login(env.token)
 client.on('ready', () => {
   console.log('Discord.js was successfully launched.')
+
+  client.user.setPresence({
+    status: 'dnd',
+    activity: {
+      name: 'with your files.',
+      type: 'PLAYING'
+    }
+  })
 })
 
 // ---------------- CACHE ---------------- //
