@@ -58,21 +58,12 @@ const userDataCache = new lru(maxAge)
 const serviceCache = new lru(serviceMaxAge)
 const discordUserCache = new lru(maxAge)
 
-/******************************** S3 HANDLER ********************************/
-
-let s3Prefix
-if (env.build = 'development') {
-  s3Prefix = 'dev/'
-} else {
-  s3Prefix = ''
-}
-
 // ---------------- EMPTY DIRECTORY ---------------- //
 
 async function emptyDirectory(dir) {
   const listParams = {
     Bucket: env.spacesName,
-    Prefix: `${s3Prefix}${dir}`
+    Prefix: dir
   }
 
   const listedObjects = await s3.listObjectsV2(listParams).promise()
@@ -105,14 +96,14 @@ async function putObject(req, file, owner, type) {
     params = {
       Body: req.files.upload.data,
       Bucket: env.spacesName,
-      Key: `${s3Prefix}teams/${owner}/${file._id}/${encodedName}${file.type}`,
+      Key: `teams/${owner}/${file._id}/${encodedName}${file.type}`,
       ACL: 'public-read'
     }
   } else {
     params = {
       Body: req.files.upload.data,
       Bucket: env.spacesName,
-      Key: `${s3Prefix}${owner}/${file._id}/${encodedName}${file.type}`,
+      Key: `${owner}/${file._id}/${encodedName}${file.type}`,
       ACL: 'public-read'
     }
   }
@@ -136,8 +127,8 @@ async function cloneObject(file, clone, type) {
     owner = file.user
   }
 
-  let oldKey = `${s3Prefix}${owner}/${file._id}/${encodedName}${file.type}`
-  let newKey = `${s3Prefix}${owner}/${clone._id}/${encodedName}${file.type}`
+  let oldKey = `${owner}/${file._id}/${encodedName}${file.type}`
+  let newKey = `${owner}/${clone._id}/${encodedName}${file.type}`
   
   const params = {
     Bucket: env.spacesName, 
@@ -166,8 +157,8 @@ async function renameObject(file, newName, type) {
     owner = file.user
   }
 
-  const oldKey = `${s3Prefix}${owner}/${file._id}/${encodedName}${file.type}`
-  const newKey = `${s3Prefix}${owner}/${file._id}/${encodedNewName}${file.type}`
+  const oldKey = `${owner}/${file._id}/${encodedName}${file.type}`
+  const newKey = `${owner}/${file._id}/${encodedNewName}${file.type}`
 
   const paramsBefore = {
     Bucket: env.spacesName, 
@@ -198,7 +189,7 @@ async function deleteObject(file, type) {
     owner = file.user
   }
 
-  const key = `${s3Prefix}${owner}/${file._id}/${file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()}${file.type}`
+  const key = `${owner}/${file._id}/${file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()}${file.type}`
   const params = {
     Bucket: env.spacesName, 
     Key: key
