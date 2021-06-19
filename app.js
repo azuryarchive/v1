@@ -349,10 +349,6 @@ app.get('/tp', async (req, res) => {
   res.redirect(307, config.trustpilot)
 })
 
-app.get('/contact', async (req, res) => {
-  res.redirect(307, 'mailto:support@azury.gg')
-})
-
 /******************************** NOT FOUND ********************************/
 
 app.use(function(req, res) {
