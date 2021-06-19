@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Unlimited File-Sharing</title>
+    <meta content="Azury - Unlimited File-Sharing" property="og:title">
+    <meta content="Azury - Unlimited File-Sharing" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;" class="app-3tqbvz">
+    <%- include('../partials/mobileWrapper'); %>
+
+    <div class="website-3tuja6">
+      <header class="header-iporgu">
+        <%- include('../partials/header.ejs') %>
+      </header>
+
+      <div class="wrapper-sctgfk">
+        <div class="plan-7rmrzf">
+          <h1 class="nmpy4l">Basic</h1>  
+          
+          <ul>
+            <li>Increased Uploads</li>
+          </ul>
+        </div>
+        <div class="plan-7rmrzf">
+          <h1 class="timu2q">Prime</h1>  
+        </div>
+        <div class="plan-7rmrzf">
+          <h1 class="zrl1l7">Prime+</h1>  
+        </div>
+      </div>
+  
+      <footer class="footer-qdrwur">
+        <%- include('../partials/footer.ejs') %>
+      </footer>
+    </div>
+    
+    <%- include('../partials/cookie-notice'); %>
+    <%- include('../partials/tips'); %>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw", "settingsDropdown-svgdhe", "bottom')
+      </script>
+    <% } %>
+  </body>
+</html>
