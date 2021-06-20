@@ -7,8 +7,8 @@
   "staffMembers": "2",
   "version": "1.0.3",
 
-  "uploadLimit": "100",
-  "accountlessUploadLimit": "50",
+  "uploadLimit": "50",
+  "accountlessUploadLimit": "25",
   "teamLimit": "2",
   "teamMemberLimit": "50",
 
