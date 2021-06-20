@@ -135,7 +135,7 @@ app.get('/terms', async (req, res) => { page('terms', req, res) })
 app.get('/guidelines', async (req, res) => { page('guidelines', req, res) })
 app.get('/imprint', async (req, res) => { page('imprint', req, res) })
 app.get('/privacy', async (req, res) => { page('privacy', req, res) })
-app.get('/documentation', async (req, res) => { page('documentation', req, res) })
+app.get('/docs', async (req, res) => { page('docs', req, res) })
 app.get('/prime', async (req, res) => { page('prime', req, res) })
 
 /******************************** DOWNLOAD PAGES ********************************/
