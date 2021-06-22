@@ -1,0 +1,239 @@
+// ---------------- HEADER ---------------- //
+
+.header-uzx4oy {
+  background: $bg-dark;
+}
+
+// ---------------- FOOTER ---------------- //
+
+.footer-c6cq83 {
+  background-color: $bg-dark;
+}
+
+// ---------------- GENERAL ---------------- //
+
+.documentation-k7uj71 {
+  background: $bg-hero;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+// ---------------- SIDEBAR ---------------- //
+
+.wrapper-gljz1p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  width: calc(50% - 470px);
+  height: calc(100vh - 220px);
+  padding: 60px;
+  top: 100px;
+  left: 0;
+
+  h1 {
+    font-size: 32px;
+    color: $header;
+    opacity: .99;
+    margin-bottom: 30px;
+
+    b {
+      font-size: 48px;
+      font-weight: 600;
+    }
+  }
+}
+
+.sidebar-nxgj4o {
+  border-radius: 16px;
+  padding: 25px;
+  background: $bg-dark;
+  border: solid 2px $background-tertiary;
+  text-align: left;
+  max-height: 600px;
+  width: calc(350px - 50px);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    height: 16px;
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $background-tertiary;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    min-height: 40px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    margin: 8px 0;
+    background-clip: padding-box;
+  }
+
+  h3 {
+    font-size: 18px;
+    opacity: .99;
+    color: $header;
+    margin: 15px 0 5px 0;
+
+    &:nth-child(1) {
+      margin: 0 0 5px 0;
+    }
+  }
+
+  ul {
+    li {
+      font-size: 16px;
+      color: $text-darker;
+      line-height: 1.2;
+      opacity: .99;
+      transition: .3s;
+
+      &:hover {
+        color: $text-dark;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// ---------------- ROUTES ---------------- //
+
+.docs-q63mlc {
+  text-align: left;
+  width: 700px;
+
+  .category-ia00vk {
+    h2 {
+      font-size: 26px;
+      opacity: .99;
+      color: $header;
+      margin-top: 60px;
+    }
+
+    &:nth-child(1) {
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .item-7vp4du {
+    padding-top: 10px;
+
+    .childItem-7k1itc {
+      border-radius: 16px;
+      padding: 25px;
+      background: $bg-dark;
+      border: solid 2px $background-tertiary;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: $header;
+      opacity: .99;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+
+      span {
+        padding: 3px 5px;
+        margin-left: 10px;
+        border-radius: 2px;
+        background: $white;
+        box-shadow: $shadow-all;
+        color: $background-tertiary;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: $text-dark;
+      opacity: .99;
+      margin-top: 10px;
+      line-height: 1.4;
+
+      span {
+        padding: 2px 5px;
+        border-radius: 3px;
+        background: $background-secondary;
+        color: $text-dark;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      &.row {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        span {
+          margin-left: 5px;
+        }
+      }
+
+      button {
+        min-width: auto;
+        padding: 10px 14px;
+        border-radius: 3px;
+        margin-right: 10px;
+      }
+
+      .link {
+        color: $blurple-light;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-last-child(1) {
+        margin-top: 20px;
+      }
+    }
+
+    .code-0e6a12 {
+      // background: $background-tertiary-alt;
+      background: $background-tertiary;
+      border: solid 2px $background-secondary;
+      padding: 10px;
+      border-radius: 5px;
+      color: $text-dark;
+      opacity: .99;
+      font-size: 16px;
+      transition: .3s;
+      user-select: text;
+      margin-top: 20px;
+
+      b {
+        color: $text-darker;
+      }
+    }
+  }
+
+  .selected {
+    .childItem-7k1itc {
+      border: solid 2px $blurple;
+    }
+  }
+}
