@@ -1,0 +1,55 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 11px 20px;
+  background: 0 0;
+  border-image: initial;
+  border-radius: 3px;
+  opacity: .99;
+  transition: .3s;
+  cursor: pointer;
+  box-shadow: $shadow-all;
+}
+
+.btn-j85yzo {
+  background: $blurple;
+  color: $white;
+
+  &:hover {
+    background: $blurple-light;
+  }
+
+  &:active {
+    background: $blurple-secondary;
+  }
+}
+
+.btn-siwwws {
+	padding: 12px 20px;
+	border: solid 2px $text-darker;
+	opacity: .99;
+	color: $text-dark;
+	font-size: 14px;
+	background: transparent;
+  border-radius: 64px;
+	transition: .3s;
+	cursor: pointer;
+
+	&:hover {
+		border-color: $header;
+		color: $header;
+	}
+}
+
+.btn-kFpsaU {
+  color: $white;
+  background: rgba(255,255,255,.15);
+
+  &:hover {
+    background: rgba(255,255,255,.2);
+  }
+}
