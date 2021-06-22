@@ -1,0 +1,44 @@
+.cookieNotice-xrj9n7 {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.row-9g7fdy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $background-secondary;
+  padding: 20px;
+}
+
+.column-g4pz85 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  img {
+    width: 32px;
+    margin-right: 15px;
+    pointer-events: none;
+  }
+
+  p {
+    font-size: 16px;
+    color: $text;
+  }
+}
+
+.times-c1m9tu {
+  font-size: 20px;
+  color: $text;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $header;
+  }
+}
