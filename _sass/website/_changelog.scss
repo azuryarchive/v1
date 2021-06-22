@@ -1,0 +1,43 @@
+// ---------------- HEADER ---------------- //
+
+.header-kwv5dk {
+  background: $bg-dark;
+}
+
+// ---------------- FOOTER ---------------- //
+
+.footer-hqhg00 {
+  background-color: $bg-dark;
+}
+
+// ---------------- GENERAL ---------------- //
+
+.changelog-5hgzg8 {
+  background: $bg-hero;
+  padding: 120px 0;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: $header;
+    opacity: .99;
+    margin-bottom: 120px;
+  }
+}
+
+// ---------------- RELEASE ---------------- //
+
+.wrapper-oum06m {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .release-lbdsgy {
+    border-radius: 16px;
+    padding: 25px;
+    background: $bg-dark;
+    border: solid 2px $background-tertiary;
+    margin: 20px;
+  }
+}
