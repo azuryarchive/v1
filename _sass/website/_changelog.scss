@@ -21,7 +21,7 @@
     font-weight: 600;
     color: $header;
     opacity: .99;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
   }
 }
 
@@ -29,15 +29,115 @@
 
 .wrapper-oum06m {
   display: flex;
+  align-content: flex-start;
+  padding: 0 60px;
+  flex-wrap: wrap;
+}
+
+.release-lbdsgy {
+  border-radius: 16px;
+  padding: 25px;
+  background: $bg-dark;
+  border: solid 2px $background-tertiary;
+  margin: 20px;
+  width: calc(400px - 50px);
+
+  .head-93gkdd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 25px;
+      font-weight: 500;
+      color: $header;
+      opacity: .99;
+    }
+    
+    p {
+      font-size: 14px;
+      color: $text-dark;
+      opacity: .99;
+    }
+  }
+}
+
+.separator-0hy1ek {
+  margin: 20px 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 
-  .release-lbdsgy {
-    border-radius: 16px;
-    padding: 25px;
-    background: $bg-dark;
-    border: solid 2px $background-tertiary;
-    margin: 20px;
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: .99;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+
+  .line-xmbxv3 {
+    flex: 1;
+    height: 2px;
+  }
+}
+
+.section-fzqx1w {
+  text-align: left;
+
+  li {
+    font-size: 16px;
+    color: $text-darker;
+    opacity: .99;
+    line-height: 1.3;
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "\2022"; 
+      color: $text-darker;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    a {
+      color: $blurple-light;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    b {
+      font-weight: 500;
+      color: $text-dark;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.new-yjg43v {
+  span {
+    color: $green;
+  }
+
+  .line-xmbxv3 {
+    background: $green;
+  }
+}
+
+.bugfixes-iuqkl5 {
+  span {
+    color: $orange;
+  }
+
+  .line-xmbxv3 {
+    background: $orange;
   }
 }
