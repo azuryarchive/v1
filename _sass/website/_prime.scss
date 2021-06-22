@@ -1,0 +1,72 @@
+// ---------------- HEADER ---------------- //
+
+.header-iporgu {
+  background: $bg-hero;
+}
+
+// ---------------- FOOTER ---------------- //
+
+.footer-qdrwur {
+  background: $bg-dark;
+}
+
+// ---------------- WRAPPER ---------------- //
+
+.wrapper-sctgfk {
+  background: $bg-hero;
+  padding: 60px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+// ---------------- PLANS ---------------- //
+
+.plan-7rmrzf {
+  width: calc(350px - 120px);
+  padding: 40px 60px;
+  border-radius: 16px;
+  margin: 0 20px;
+  background: $bg-dark;
+  border: solid 2px $background-tertiary;
+  box-shadow: $shadow-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 25px;
+    opacity: .99;
+  }
+
+  .nmpy4l {
+    color: $bronze;
+  }
+
+  .timu2q {
+    color: $silver;
+  }
+
+  .zrl1l7 {
+    color: $gold;
+  }
+
+  ul {
+    margin: 30px 0 60px 0;
+
+    li {
+      font-size: 16px;
+      color: $text-dark;
+      opacity: .99;
+      line-height: 1.4;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: $text-darker;
+    opacity: .99;
+    margin-top: 10px;
+  }
+}
