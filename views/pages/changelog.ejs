@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head divfix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Azury - Changelog</title>
+    <meta content="Azury - Changelog" property="og:title">
+    <meta content="Azury - Changelog" property="twitter:title">
+
+    <%- include('../partials/meta'); %>
+  </head>
+
+  <body oncontextmenu="return false;">
+    <%- include('../partials/mobileWrapper'); %>
+
+    <div class="website-3tuja6">
+      <header class="header-uzx4oy">
+        <%- include('../partials/header.ejs') %>
+      </header>
+
+      <div class="documentation-k7uj71">
+        <div class="wrapper-gljz1p">
+          <h1><b>API</b> Docs</h1>
+
+          <div class="sidebar-nxgj4o"></div>
+        </div>
+
+        <div class="docs-q63mlc"></div>
+      </div>
+
+      <footer class="footer-c6cq83">
+        <%- include('../partials/footer.ejs') %>
+      </footer>
+    </div>
+
+    <%- include('../partials/cookie-notice'); %>
+    <script src="assets/f45cc49331cb4798.js"></script>
+    <% if (authenticated) { %>
+      <script>
+        interactiveTip ('avatar-if6jiw', 'settingsDropdown-svgdhe', 'bottom')
+      </script>
+    <% } %>
+  </body>
+</html>
