@@ -155,27 +155,5 @@
 
     <%- include('../partials/popups') %>
     <%- include('../partials/cookie-notice') %>
-    <script>
-      interactiveTip ('language-2dw452', 'languageDropdown', 'right')
-      interactiveTip ('font-uvhhoh', 'typefacesDropdown', 'right')
-      sidebarTip ('badge-ra8h1v', 'Employee', 'top')
-      sidebarTip ('badge-6r8c5b', 'Partner', 'top')
-      sidebarTip ('badge-f3lamf', 'Bug Hunter', 'top')
-      sidebarTip ('badge-sen7ms', 'Verified Developer', 'top')
-
-      const dropdown = document.getElementById('accentColorDropdown')
-      dropdown.style.display = 'flex'
-tippy('.accentColor-mqmnem', {
-  content: dropdown,
-  animation: 'scale-subtle',
-  theme: 'reallydark',
-  placement: 'top',
-  interactive: true,
-  trigger: 'click',
-  interactiveBorder: 0,
-  inlinePositioning: true
-})
-    </script>
-    <%- include('../partials/tips'); %>
   </body>
 </html>
