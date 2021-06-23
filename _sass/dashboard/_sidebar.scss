@@ -9,8 +9,8 @@
   bottom: 0;
   left: 80px;
   width: 328px;
-  height: 100%;
-  padding: 0;
+  height: calc(100% - 30px);
+  padding: 15px 0;
 
   h1 {
     font-size: 20px;
@@ -27,8 +27,9 @@
   flex-direction: column;
 
   h3 {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
     color: $header;
     opacity: .99;
     margin: 15px 0 10px 30px;
