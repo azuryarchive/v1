@@ -38,13 +38,13 @@
         <%- include('../partials/navigation'); %>
     
         <div class="wrapper-s3en1r">
-          <div class="container-ahg65x scroller-ffigeh" data-aos="fade-up">
+          <div class="container-ahg65x scroller-ffigeh">
             <div class="wrapper-40j482">
               <h1 class="title-o67asw">My Account</h1>
               <div class="userWrapper-vjkqic">
                 <div class="column-o8n24w">
                   <img src="https://cdn.discordapp.com/avatars/<%= u.id %>/<%= u.avatar %>" alt="error">
-                  <h1><%= u.username %><small>#<%= u.discriminator %></small></h1>
+                  <h1>@<b>Azury</b></h1>
                   <div class="row-9hqhf7">
                     <% if (user.flags.includes('0')) { %>
                       <div class="badges-0sk43k badge-ra8h1v">
@@ -115,41 +115,6 @@
             </div> 
           </div>
         </div>
-      </div>
-
-      <div id="typefacesDropdown" class="actions-1asr66">
-        <div class="action-m9sypr poppins" onclick="setTypeface('poppins')">
-          Poppins (Default)
-        </div>
-        <div class="action-m9sypr open-sans" onclick="setTypeface('open-sans')">
-          Open Sans
-        </div>
-        <div class="action-m9sypr roboto" onclick="setTypeface('roboto')">
-          Roboto
-        </div>
-        <div class="action-m9sypr playfair-display" onclick="setTypeface('playfair-display')">
-          Playfair Display
-        </div>
-        <div class="action-m9sypr montserrat" onclick="setTypeface('montserrat')">
-          Montserrat
-        </div>
-        <div class="action-m9sypr raleway" onclick="setTypeface('raleway')">
-          Raleway
-        </div>
-        <div class="action-m9sypr newsreader" onclick="setTypeface('newsreader')">
-          Newsreader
-        </div>
-        <div class="action-m9sypr indie-flower" onclick="setTypeface('indie-flower')">
-          Indie Flower
-        </div>
-      </div>
-
-      <div id="accentColorDropdown">
-        <div class="selectAccentColor-kmrufb blurple" onclick="setAccentColor('blurple')"></div>
-        <div class="selectAccentColor-kmrufb green" onclick="setAccentColor('green')"></div>
-        <div class="selectAccentColor-kmrufb red" onclick="setAccentColor('red')"></div>
-        <div class="selectAccentColor-kmrufb purple" onclick="setAccentColor('purple')"></div>
-        <div class="selectAccentColor-kmrufb blue" onclick="setAccentColor('blue')"></div>
       </div>
     </div> 
 
