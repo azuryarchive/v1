@@ -14,7 +14,7 @@ dayjs.extend(localizedFormat)
 const apiRouter = require('./api.js')
 const app = express()
 const Strategy = require('passport-discord').Strategy
-const { about, dashUser, dashDiscordUser, getFile, dashFiles, dashTeam, dashTeams } = require('./core')
+const { about, dashUser, dashDiscordUser, getFile, dashFiles, dashTeam, dashTeams } = require('./engine')
 
 /******************************** ENVIRONMENT VARIABLES ********************************/
 
