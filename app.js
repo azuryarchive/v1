@@ -279,27 +279,8 @@ app.get('/archive', checkAuth, async (req, res) => {
   }
 })
 
-/*
+
 app.get('/account', checkAuth, async (req, res) => {
-  const user = await dashUser(req.user.id)
-  const teams = await dashTeams(req.user.id)
-
-  if (user === false || teams === false) {
-    res.status(400).json('Failed To Fetch Data')
-  } else {
-    res.render('pages/account', { 
-      user: user,
-      u: req.user,
-      teams: teams,
-      version: config.version
-    })
-  }
-
-  res.redirect('/inventory')
-})
-*/
-
-app.get('/dev-account', checkAuth, async (req, res) => {
   const user = await dashUser(req.user.id)
   const teams = await dashTeams(req.user.id)
 
