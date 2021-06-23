@@ -132,13 +132,13 @@
 
 	h1 {
 		font-size: 40px;
-		font-weight: 500;
-		color: $header;
+		font-weight: 400;
+    color: $text-darker;
+    opacity: .99;
 
-		small {
-			font-size: 26px;
-			font-weight: 400;
-			color: $text-darker;
+		b {
+      font-weight: 500;
+			color: $header;
 		}
 	}
 }
