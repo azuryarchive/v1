@@ -13,31 +13,12 @@
       <i class="fab fa-github" onclick="window.open('/gh')"></i>
     </div>
     <% if (authenticated) { %>
-      <div class="avatar-if6jiw">
-        <img src="https://cdn.discordapp.com/avatars/<%= u.id %>/<%= u.avatar %>" alt="error">
-      </div>
+      <button class="btn-j85yzo" onclick="window.location.href='/inventory'">Dashboard</button>
     <% } else { %>
-      <button class="btn-j85yzo" onclick="window.location.href='/login'">
-        Sign in w/ Discord
-      </button>
+      <button class="btn-j85yzo" onclick="window.location.href='/login'">Sign in w/ Discord</button>
     <% } %>
   </div>
 </div>
-
-<% if (authenticated) { %>
-  <div id="settingsDropdown-svgdhe" class="actions-1asr66">
-    <div class="action-m9sypr" onclick="window.location.href='/inventory'">
-      Dashboard
-    </div>
-    <div class="action-m9sypr" onclick="window.open('https://forms.gle/JS9xfSojcAosmw439')">
-      Support
-    </div>
-    <div class="separator-3i6ltg"></div>
-    <div class="action-m9sypr danger-hkfr30" onclick="window.location.href='/logout'">
-      Log Out
-    </div>
-  </div>
-<% } %>
 
 <div class="mobileWrapper-xnlvjj">
   <a class="brand-3hcazj" href="/">Azury</a>
