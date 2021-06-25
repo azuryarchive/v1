@@ -1,7 +1,15 @@
-.column-2nuro0 h1 {
-  font-size: 40px;
-  color: $header;
+// ---------------- TABS ----------------- //
+
+.tabGroup-bpkg3x {
+  display: none;
 }
+
+.active-axw1qf {
+  background: $background-secondary-alt !important;
+  color: $header !important;
+}
+
+// ---------------- GENERAL ----------------- //
 
 .wrapper-xrjttc {
   margin-top: 60px;
@@ -13,16 +21,11 @@
   flex-wrap: wrap;
 }
 
-.discordSettings-w1sgv9 {
-  margin-top: 60px;
+// ---------------- MY ACCOUNT ----------------- //
 
-  h1 {
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    color: $header;
-  }
+.column-2nuro0 h1 {
+  font-size: 40px;
+  color: $header;
 }
 
 .settingsWrapper-lagf8m {
@@ -82,9 +85,9 @@
 
 .title-o67asw {
   font-size: 20px;
-  font-weight: 400;
   text-transform: uppercase;
   color: $header;
+  opacity: .99;
 }
 
 .information-kdg4xp {
@@ -96,9 +99,9 @@
   flex-direction: column;
 }
 
-.wrapper-40j482 {
+.myAccount-bpkg3x {
   max-width: 1400px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -106,15 +109,20 @@
 }
 
 .userWrapper-vjkqic {
-  background: rgba(255,255,255,.05);
+  background: $bg-dark;
+  border: solid 2px $background-tertiary;
   padding: 20px;
   border-radius: 28px;
   margin-top: 30px;
+  box-shadow: $shadow-all;
 }
 
 .information-kdg4xp {
-  background: rgba(255,255,255,.05);
+  background: $background-tertiary;
+  border: solid 2px $background-secondary;
 }
+
+// ---------------- PROFILE ----------------- //
 
 .column-o8n24w {
   display: flex;
@@ -129,23 +137,39 @@
 		pointer-events: none;
 		margin-bottom: 20px;
 	}
+  
+  .row-ij9pr3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-	h1 {
-		font-size: 40px;
-		font-weight: 400;
-    color: $text-darker;
-    opacity: .99;
+    h1 {
+      font-size: 40px;
+      font-weight: 400;
+      color: $text-darker;
+      opacity: .99;
+  
+      b {
+        font-weight: 500;
+        color: $header;
+      }
+    }
 
-		b {
-      font-weight: 500;
-			color: $header;
-		}
-	}
+    i {
+      font-size: 16px;
+      color: $text-darker;
+      cursor: pointer;
+      transition: .3s;
+      margin-left: 10px;
+
+      &:hover {
+        color: $text;
+      }
+    }
+  }
 }
 
-.activeTypeface-coo1pw, .activeAccentColor-amipma {
-  text-transform: capitalize;
-}
+// ---------------- OTHER STUFF ----------------- //
 
 .row-9hqhf7 {
   margin-top: 10px;
@@ -164,7 +188,7 @@
 
 	i {
 		font-size: 24px;
-		color: var(--brand);
+		color: $blurple;
 	}
 }
 
@@ -200,44 +224,6 @@
       color: $text-darker;
     }
   }
-
-  .accentColor-mqmnem {
-    width: 18px;
-    height: 18px;
-    border-radius: 5px;
-    transform: rotate(45deg);
-    background: var(--brand);
-    cursor: pointer;
-    border: solid 2px $background-secondary-alt;
-  }
-}
-
-.selectAccentColor-kmrufb {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.blurple {
-  background: $blurple;
-}
-
-.green {
-  background: $green
-}
-
-.red {
-  background: $red;
-}
-
-.purple {
-  background: $purple;
-}
-
-.blue {
-  background: $blue;
 }
 
 .column-xl99n2 {
@@ -248,6 +234,7 @@
   i {
     font-size: 25px;
     color: $header;
+    opacity: .99;
     margin-right: 15px;
   }
 }
@@ -255,20 +242,23 @@
 .name-e3cyok {
   h3 {
     font-size: 14px;
-    color: $text;
+    color: $text-dark;
     text-transform: uppercase;
     text-align: left;
+    font-weight: 500;
     margin-bottom: 2px;
+    opacity: .99;
   }
 
   p {
-    font-size: 18px;
+    font-size: 20px;
     color: $header;
     overflow: hidden;
     white-space: nowrap;
     line-height: 1.3;
     text-overflow: ellipsis;
     max-width: 400px;
+    opacity: .99;
     text-align: left;
   }
 }
@@ -306,3 +296,5 @@
   font-size: 18px;
   color: $red;
 }
+
+// ---------------- MY ACCOUNT ----------------- //
