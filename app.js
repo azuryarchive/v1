@@ -99,20 +99,23 @@ app.get('/logout', async (req, res) => {
 
 /******************************** WEBSITE ********************************/
 
-/*
+/* const { customAlphabet } = require('nanoid')
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZa_bcdefghijklmnopqr-stuvwxyz0123456789.'
+const randomUsername = customAlphabet(alphabet, 16)
+
 // USED TO ADD NEW FIELDS TO EXISTING DOCUMENTS:
 
 app.get('/dev', (req, res) => {
-  teamSchema.updateMany({},
-    { flags: [] },
+  userSchema.updateMany({},
+    { username: randomUsername() },
     { multi: true }, 
       function(err, numberAffected){  
         if (err) console.log(err)
     })
 
   console.log('Done')
-})
-*/
+}) */
+
 
 function user(req) {
   if (req.isAuthenticated()) return req.user
