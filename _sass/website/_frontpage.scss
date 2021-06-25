@@ -67,7 +67,7 @@
 // ---------------- STATISTICS ---------------- //
 
 .statistics-mthyiv {
-  background: $bg-darker;
+  background: $bg-dark;
   padding: 4rem 0 4rem 0;
 
   h2 {
@@ -88,15 +88,20 @@
 }
 
 .column-cclmzz {
-  margin: 0 2.5rem;
+  margin: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: $bg-hero;
+  width: 200px;
+  padding: 20px 0;
+  border-radius: 20px;
+  border: solid 2px $background-tertiary;
 
   h3 {
     font-size: 1.125rem;
-    color: rgba(255,255,255,.8);
+    color: $text-dark;
     opacity: .99;
     margin: 1.25rem 0 .3125rem 0;
   }
@@ -112,8 +117,9 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: $bg-dark;
+  border: solid 2px $background-tertiary;
   display: flex;
+  background: $bg-dark;
   align-items: center;
   justify-content: center;
   transition: .3s;
