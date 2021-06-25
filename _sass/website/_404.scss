@@ -9,31 +9,33 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-image: url('https://cdn.jsdelivr.net/gh/azuryofficial/assets/47894d9cd26e.svg');
+	background-image: url('https://cdn.jsdelivr.net/gh/azuryofficial/static@1.2/b484f2ffb415187f.svg');
 	background-attachment: fixed;
 	background-size: cover;
-	background-color: $background-tertiary;
-}
+	background-color: $bg-hero;
 
-.wrapper-7jhxqo h1 {
-	font-size: 100px;
-	font-weight: 500;
-	color: $header;
-	margin-bottom: 60px
-}
-
-.wrapper-7jhxqo h2 {
-	font-size: 32px;
-	font-weight: 500;
-	color: $header;
-}
-
-.wrapper-7jhxqo p {
-	font-size: 20px;
-	color: $text-darker;
-	margin-top: 10px;
-}
-
-.wrapper-7jhxqo button {
-	margin-top: 20px;
+	img {
+		width: 128px;
+		pointer-events: none;
+		margin-bottom: 60px;
+	}
+	
+	h2 {
+		font-size: 40px;
+		font-weight: 600;
+		//text-transform: uppercase;
+		color: $header;
+		opacity: .99;
+	}
+	
+	p {
+		font-size: 20px;
+		color: $text-dark;
+		margin-top: 10px;
+		opacity: .99;
+	}
+	
+	button {
+		margin-top: 20px;
+	}
 }
