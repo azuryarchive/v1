@@ -219,16 +219,6 @@ async function userID(req) {
   return user._id
 }
 
-// check if discord id is valid
-async function validDiscord(id) {
-  if (encodeURIComponent(id) != id) return false
-  if (id.length > 18) return false
-  if (/^\d+$/.test(id) == false) return false
-  const generateID = encodeURIComponent(id)
-  if (id != generateID) return false
-  return true
-}
-
 // check if object id is valid
 function validObject(id) {
   if (id == null || id == 'undefined' || id == '' || id == undefined) return false
@@ -239,6 +229,30 @@ function validObject(id) {
   return true
 }
 
+// get user id from username
+async function getUserID(id) {
+  let userID
+  // username
+  if (id.charAt(0) == '@') {
+    if (id.length < 5 || id.length > 17) return false
+    const user = await userSchema.findOne({ username: id.replace(/[^a-zA-Z0-9]/g, '') })
+    if (!user) return false
+    userID = user._id
+  // user id
+  } else {
+    if (validObject(id) == false) return false
+    const user = await userSchema.findOne({ _id: id })
+    if (!user) return false
+    userID = user._id
+  }
+
+  if (id == id.replace(/[^a-zA-Z0-9]/g, '')) return false
+  if (id.length < 4 || id.length > 16) return false
+
+  return userID
+}
+
+// get readable size
 function readableSize(size) {
   size = size.toString()
   const length = size.length
@@ -1049,14 +1063,14 @@ async function deleteUser(req) {
 // ---------------- USER DATA ---------------- //
 
 async function userData(req) {
-  const cached = userDataCache.get(user)
-
-  if (cached) return cached
-
-  if (req.query.token == null) return { 'code': 400, 'status': 'No Token Provided' }
-
   const user = await userID(req)
   if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
+  
+  const cached = userDataCache.get(user)
+
+  if (cached) return { 'code': 200, 'status': cached }
+
+  if (req.query.token == null) return { 'code': 400, 'status': 'No Token Provided' }
 
   const userDetails = await userSchema.findOne({ '_id': user }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Fetch User From Database' }
@@ -1163,7 +1177,8 @@ async function transferTeam(req) {
   if (req.params.owner == null) return { 'code': 400, 'status': 'Missing New Owner' }
   if (req.params.team == null) return { 'code': 400, 'status': 'Missing Team ID' }
   if (validObject(req.params.team) == false) return { 'code': 400, 'status': 'Invalid Team ID' }
-  if (validDiscord(req.params.owner) == false) return { 'code': 400, 'status': 'Invalid Owner ID' }
+  const newOwner = await getUserID(req.params.owner)
+  if (newOwner == false) return { 'code': 400, 'status': 'Invalid Owner ID' }
   const user = await userID(req)
   if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
 
@@ -1182,12 +1197,12 @@ async function transferTeam(req) {
   if (team.owner != user) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member == req.params.owner
+    return member == newOwner
   }
 
   if (team.members.some(isMember) == false) return { 'code': 400, 'status': 'New Owner Has To Be A Member' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { 'owner': req.params.owner }, { returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { 'owner': newOwner }, { returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Fetch Team' }
   })
 
@@ -1291,8 +1306,9 @@ async function addMember(req) {
   if (req.query.token == null) return { 'code': 400, 'status': 'Missing Token' }
   if (req.params.team == null) return { 'code': 400, 'status': 'Missing Team ID' }
   if (!req.params.member) return { 'code': 400, 'status': 'Missing Member ID' }
-  if (validDiscord(req.params.member) == false) return { 'code': 400, 'status': 'Invalid User ID' }
   if (validObject(req.params.team) == false) return { 'code': 400, 'status': 'Invalid Team ID' }
+  const newMember = await getUserID(req.params.member)
+  if (newMember == false) return { 'code': 400, 'status': 'Invalid User ID' }
 
   const user = await userID(req)
   if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
@@ -1312,14 +1328,14 @@ async function addMember(req) {
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member == req.params.member
+    return member == newMember
   }
 
   if (team.members.some(isMember)) return { 'code': 400, 'status': 'Invalid Member' }
 
   if (team.members.length >= config.teamMemberLimit) return { 'code': 400, 'status': 'Team Member Limit Reached' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$push': { 'members': req.params.member }}, { returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$push': { 'members': newMember }}, { returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Add Member' }
   })
 
@@ -1339,8 +1355,9 @@ async function removeMember(req) {
   if (req.query.token == null) return { 'code': 400, 'status': 'Missing Token' }
   if (req.params.team == null) return { 'code': 400, 'status': 'Missing Team ID' }
   if (!req.params.member) return { 'code': 400, 'status': 'Missing Member ID' }
-  if (validDiscord(req.params.member) == false) return { 'code': 400, 'status': 'Invalid User ID' }
   if (validObject(req.params.team) == false) return { 'code': 400, 'status': 'Invalid Team ID' }
+  const oldMember = await getUserID(req.params.member)
+  if (oldMember == false) return { 'code': 400, 'status': 'Invalid User ID' }
 
   const user = await userID(req)
   if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
@@ -1360,12 +1377,12 @@ async function removeMember(req) {
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
   function isMember(member, index, array) {
-    return member == req.params.member
+    return member == oldMember
   }
 
   if (team.members.some(isMember) == false) return { 'code': 400, 'status': 'Invalid Member' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': req.params.member }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': oldMember }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Remove Member' }
   })
 
@@ -1563,6 +1580,49 @@ async function about() {
   return { 'code': 200, 'status': data }
 }
 
+// ---------------- SET USERNAME ---------------- //
+
+async function setUsername(req) {
+  if (req.query.token == null) return { 'code': 400, 'status': 'Missing Token' }
+  if (req.body.username == null) return { 'code': 400, 'status': 'Missing Username' }
+  const token = encodeURIComponent(req.query.token)
+  const username = req.body.username.replace(/[^a-zA-Z0-9]/g, '')
+
+  const user = await userID(req)
+  if (user == false) return { 'code': 400, 'status': 'Failed To Authorize User' }
+
+  // get cached user
+  const cached = userCache.get(token)
+
+  if (cached) {
+    if (cached.username == username) return { 'code': 400, 'status': 'You Have Already That Name' }
+  }
+
+  // check if username contains special characters
+  if (username != req.body.username) return { 'code': 400, 'status': 'Usernames Can Only Consist Of Letters And Numbers' }
+
+  // check if username has the right size
+  if (username.length < 4 || username.length > 16) return { 'code': 400, 'status': 'Usernames Have To Be Between 4 And 16 Characters Long' }
+
+  // check if username exists
+  const check = await userSchema.countDocuments({ username: username })
+  if (check != 0) return { 'code': 400, 'status': 'Username Is Already Taken' }
+  const checkSecondary = await userSchema.countDocuments({ username: username.toLowerCase() })
+  if (checkSecondary != 0) return { 'code': 400, 'status': 'Username Is Already Taken' }
+
+  // set new username
+  const updatedUser = await userSchema.findOneAndUpdate({ _id: user }, { username: username }, ( err, success ) => {
+    if (err) return { 'code': 400, 'status': 'Failed To Update User' }
+  })
+
+  if (cached) {
+    userCache.del(token)
+    userCache.set(token, updatedUser)
+  }
+
+  return { 'code': 200, 'status': 'Successfully Changed Username' }
+}
+
 /******************************** EXPORT FUNCTIONS ********************************/
 
 module.exports = {
@@ -1594,5 +1654,6 @@ module.exports = {
   dashDiscordUser,
   dashFiles,
   dashTeam,
-  dashTeams
+  dashTeams,
+  setUsername
 }
