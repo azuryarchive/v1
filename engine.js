@@ -1569,7 +1569,6 @@ async function about() {
     'members': users,
     'teams': teams,
     'files': allFiles,
-    'staffMembers': config.staffMembers,
     'storage': storage,
     'readableStorage': readableSize(storage),
     'fetchedAt': Date.now(),
