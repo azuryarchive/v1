@@ -94,8 +94,8 @@
   justify-content: center;
   flex-direction: column;
   background: $bg-hero;
-  width: 200px;
-  padding: 20px 0;
+  padding: 20px;
+  min-width: 200px;
   border-radius: 20px;
   border: solid 2px $background-tertiary;
 
