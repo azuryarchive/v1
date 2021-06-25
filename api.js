@@ -1,6 +1,7 @@
 /******************************** DEPENDENCIES ********************************/
 
 const express = require('express')
+const expressLimit = require('express-rate-limit')
 const config = require('./config.json')
 const api = express.Router()
 const fileUpload = require('express-fileupload')
@@ -15,6 +16,13 @@ api.use(fileUpload({
 }))
 api.use(cors())
 
+/******************************** SPECIAL RATELIMITS ********************************/
+
+const usernameRatelimit = expressLimit({
+  windowMs: 60 * 1000,
+  max: 1 // max. 1 request per minute
+})
+
 /******************************** API ********************************/
 
 // ---------------- PRODUCT ---------------- //
@@ -22,11 +30,6 @@ api.use(cors())
 // get javascript library version
 api.get('/product/azury.js/version', async (req, res) => {
   res.status(200).json(config.jsWrapper)
-})
-
-// get python library version
-api.get('/product/azury.py/version', async (req, res) => {
-  res.status(200).json(config.pyWrapper)
 })
 
 // get product statistics
@@ -61,6 +64,12 @@ api.get('/users/files/:file/short', async (req, res) => {
 // upload new file
 api.post('/users/files/new', async (req, res) => {
   const result = await core.uploadFile(req, 'user')
+  res.status(result.code).json(result.status)
+})
+
+// set new username
+api.post('/users/@me/username', usernameRatelimit, async (req, res) => {
+  const result = await core.setUsername(req)
   res.status(result.code).json(result.status)
 })
 
