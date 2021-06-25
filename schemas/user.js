@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const { customAlphabet } = require('nanoid')
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZa_bcdefghijklmnopqr-stuvwxyz0123456789.'
 const token = customAlphabet(alphabet, 512)
+const randomUsername = customAlphabet(alphabet, 16)
 
 /* 
   USER FLAGS:
@@ -23,6 +24,10 @@ const token = customAlphabet(alphabet, 512)
 const userSchema = mongoose.Schema({
   _id: {
     type: String
+  },
+  username: {
+    type: String,
+    default: () => randomUsername()
   },
   avatar: {
     type: String,
