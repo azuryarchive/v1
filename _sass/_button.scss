@@ -9,9 +9,9 @@ button {
   background: 0 0;
   border-image: initial;
   border-radius: 3px;
-  opacity: .99;
   transition: .3s;
   cursor: pointer;
+  opacity: .99;
   box-shadow: $shadow-all;
 }
 
@@ -47,9 +47,11 @@ button {
 
 .btn-kFpsaU {
   color: $white;
+  //padding-right: 15px;
+  //padding-left: 15px;
   background: rgba(255,255,255,.15);
 
   &:hover {
-    background: rgba(255,255,255,.2);
+    background: rgba(255,255,255,.25);
   }
 }
