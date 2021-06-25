@@ -36,12 +36,25 @@
   </div>
 </div>
 
+<div class="changeUsernamePopup-ja694c popup-het172">
+  <div class="popupOpacity-b42lrr">
+    <div class="popupBox-k7hgav">
+      <i class="fal fa-times times-cg1xkr"></i>
+      <h1>Set New Username</h1>
+      <div class="row-5472qw">
+        <input type="text" name="name" class="changeUsername-7d4mab" id="newUsername">
+        <button class="btn-j85yzo updateUsername-e56yxg">Set</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="deleteUserPopup-s8jdp4 popup-het172">
   <div class="popupOpacity-b42lrr">
     <div class="popupBox-k7hgav">
       <i class="fal fa-times times-cg1xkr"></i>
       <h1>Delete Account</h1>
-      <p>You're about to delete your entire account, including all files and data. Are you sure you want to proceed?</p>
+      <p style="max-width: 85%;">You're about to delete your entire account, including all files and data. Are you sure you want to proceed?</p>
       <button class="btn-kFpsaU" onclick="deleteUser()">Proceed</button>
     </div>
   </div>
@@ -52,9 +65,9 @@
     <div class="popupBox-k7hgav">
       <i class="fal fa-times times-cg1xkr"></i>
       <h1>Transfer Team</h1>
-      <p>Specify the User ID of the new owner to transfer it.</p>
+      <p>Specify the username of the new owner to transfer it.</p>
       <div class="row-5472qw">
-        <input type="text" name="name" id="newOwner">
+        <input type="text" name="name" id="newOwner" required placeholder="gamer123">
         <button class="btn-j85yzo transferTeam-jfhyne">Transfer</button>
       </div>
     </div>
@@ -66,9 +79,9 @@
     <div class="popupBox-k7hgav">
       <i class="fal fa-times times-cg1xkr"></i>
       <h1>Invite Friend</h1>
-      <p>Specify the User ID of your friend.</p>
+      <p>Specify the username of your friend.</p>
       <div class="row-5472qw">
-        <input type="text" class="newMember-hjx3y8">
+        <input type="text" class="newMember-hjx3y8" placeholder="gamer123">
         <button class="btn-j85yzo addUser-24em0z">Invite</button>
       </div>
     </div>
@@ -128,7 +141,7 @@
       <h1>Create Team</h1>
       <p>You can own up to 2 teams each with up to 50 members.</p>
       <div class="row-5472qw">
-        <input type="text" id="createTeamName" required>
+        <input type="text" id="createTeamName" required placeholder="Dream Team">
         <button class="btn-j85yzo createTeam-3xmrfp">Create</button>
       </div>
     </div>
