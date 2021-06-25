@@ -16,11 +16,11 @@
   font-size: 16px;
   word-wrap: break-word;
   color: $text-dark;
-  opacity: .99;
   width: 650px;
 
   h2 {
     margin-top: 40px;
+    opacity: .99;
     font-size: 24px;
     line-height: 1.4;
   }
@@ -33,10 +33,12 @@
     line-height: 28px;
     margin-top: 10px;
     color: $text-darker;
+    opacity: .99;
   }
 
   ul {
     margin-top: 10px;
+    opacity: .99;
 
     li {
       list-style-type: disc;
@@ -54,12 +56,16 @@
     }
   }
 
-  ol li {
-    list-style-type: decimal;
-    line-height: 28px;
-    margin-left: 20px;
-    margin-top: 10px;
-    color: $text-darker;
+  ol {
+    opacity: .99;
+
+    li {
+      list-style-type: decimal;
+      line-height: 28px;
+      margin-left: 20px;
+      margin-top: 10px;
+      color: $text-darker;
+    }
   }
 
   b {
