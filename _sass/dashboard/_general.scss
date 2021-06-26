@@ -82,19 +82,18 @@
 .container-ahg65x {
   display: flex;
   align-items: center;
-  justify-content: top;
+  justify-content: flex-start;
   flex-direction: column;
   background-image: url('https://cdn.jsdelivr.net/gh/azuryofficial/static@1.2/b484f2ffb415187f.svg');
   background-attachment: fixed;
   background-color: $bg-hero;
   background-size: cover;
-  background-position: right;
+  background-position: left bottom;
   width: 100%;
   height: calc(100% - 120px);
   max-height: calc(100% - 120px);
   overflow-y: scroll;
   padding: 60px 0;
-  overflow: hidden;
 }
 
 .container-c3gmum {
