@@ -3,7 +3,7 @@
   "discordServer": "680782208725942345",
 
   "jsWrapper": "1.1.0",
-  "version": "1.0.4",
+  "version": "1.0.5",
 
   "uploadLimit": "50",
   "accountlessUploadLimit": "25",
