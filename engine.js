@@ -304,7 +304,7 @@ async function dashDiscordUser(id) {
 
 async function dashFiles(req, type) {
   if (type == 'all') {
-    const files = await uploadSchema.find({ user: req.user.id, flags: { '$ne': 'trashed' }, flags: { '$ne': 'trashed' } }, function (err, success) {
+    const files = await uploadSchema.find({ user: req.user.id, flags: { '$ne': 'trashed' }, flags: { '$ne': 'archived' } }, function (err, success) {
       if (err) return false
     })
 
