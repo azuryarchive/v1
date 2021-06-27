@@ -11,8 +11,7 @@ const cors = require('cors')
 /******************************** CONFIGURE ROUTER ********************************/
 
 api.use(fileUpload({
-  limits: { fileSize: config.uploadLimit*1024*1024 },
-  uploadTimeout: 60000
+  uploadTimeout: 100000
 }))
 api.use(cors())
 
