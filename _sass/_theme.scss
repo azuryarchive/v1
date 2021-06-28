@@ -11,12 +11,11 @@ $indie-flower: 'Indie Flower', sans-serif;
 
 // -------------------------------- THEME -------------------------------- //
 
-$header: #FFFFFF;
-$text: #DCDDDE;
-$text-dark: #B9BBBE;
-$text-darker: #72767D;
-$text-darkest: #4F5660;
-$text-link: #00B0F4;
+$header: rgba(255, 255, 255, .99);
+$text: rgba(220, 221, 222, .99);
+$text-dark: rgba(185, 187, 190, .99);
+$text-darker: rgba(114, 118, 125, .99);
+$text-darkest: rgba(79, 86, 96, .99);
 
 $background-primary: #36393F;
 $background-primary-alt: #3E4147;
@@ -36,7 +35,7 @@ $purple: #8e55f6;
 $red: #ED4245;
 $orange: #FAA61A;
 $blue: #2196F3;
-$white: #FFFFFF;
+$white: $header;
 
 $grey: #4F545C;
 $grey-secondary: #72767D;
@@ -49,14 +48,14 @@ $bg-dark: #18191C;
 $bg: #1A1B1E;
 $bg-hero: #141518;
 
-$blurple: #5966F3;
-$blurple-secondary: #4651C3;
-$blurple-tertiary: #3B44A5;
-$blurple-light: #7A84F5;
+$blurple: rgba(89, 102, 243, .99);
+$blurple-secondary: rgba(70, 81, 195, .99);
+$blurple-tertiary: rgba(59, 68, 165, .99);
+$blurple-light: rgba(122, 132, 245, .99);
 
-$gold: #CFA76B;
-$silver: #A7ABAD;
-$bronze: #EBB487;
+$gold: rgba(207, 167, 107, .99);
+$silver: rgba(167, 171, 173, .99);
+$bronze: rgba(235, 180, 135, .99);
 
 $shadow-bottom: 0px 4px 4px rgba(0, 0, 0, .16);
 $shadow-all: 0 8px 15px rgba(0, 0, 0, .2);
@@ -65,7 +64,11 @@ $shadow-all: 0 8px 15px rgba(0, 0, 0, .2);
 
 ::selection {
 	background: $blurple;
-	color: $white;
+	color: $header;
+}
+
+:root {
+  color-scheme: dark;
 }
 
 body, html {
@@ -111,7 +114,7 @@ svg {
   background: $background-secondary;
   color: $header;
   font-size: 14px;
-  padding: 4px;
+  padding: 3px;
   border-radius: 5px;
   box-shadow: $shadow-bottom;
   text-align: left;
