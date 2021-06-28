@@ -479,20 +479,20 @@ app.get('/team/:team', checkAuth, async (req, res) => {
 
 /******************************** SOCIAL ********************************/
 
-app.get('/dc', async (req, res) => {
+app.get('/go/discord', async (req, res) => {
   res.redirect(307, config.discord)
 })
 
-app.get('/gh', async (req, res) => {
-  res.redirect(307, config.github)
+app.get('/go/github', async (req, res) => {
+  res.redirect(301, config.github)
 })
 
-app.get('/tw', async (req, res) => {
-  res.redirect(307, config.twitter)
+app.get('/go/twitter', async (req, res) => {
+  res.redirect(301, config.twitter)
 })
 
-app.get('/tp', async (req, res) => {
-  res.redirect(307, config.trustpilot)
+app.get('/go/trustpilot', async (req, res) => {
+  res.redirect(301, config.trustpilot)
 })
 
 /******************************** NOT FOUND ********************************/
