@@ -154,6 +154,60 @@ app.get('/u/:file', async (req, res) => {
       return 'Logged Out'
     }
 
+    let file = data.status
+    file.downloadURL = `https://cdn.azury.gg/${file.author}/${file.id}/${file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()}${file.type}`
+
+    switch (file.type) {
+      case '.zip':
+      case '.rar':
+      case '.7z':
+        file.category = 'Archives'
+        file.tag = 'Archive'
+        file.icon = 'fa-file-archive'
+        break
+      case '.html':
+      case '.css':
+      case '.ejs':
+      case '.js':
+      case '.py':
+      case '.json':
+        file.category = 'Code'
+        file.tag = 'Code'
+        file.icon = 'fa-file-code'
+        break
+      case '.png':
+      case '.jpg':
+      case '.jpeg':
+      case '.gif':
+      case '.svg':
+      case '.psd':
+        file.category = 'Images'
+        file.tag = 'Image'
+        file.icon = 'fa-file-image'
+        break
+      case '.mp3':
+      case '.wav':
+        file.category = 'Music'
+        file.tag = 'Music'
+        file.icon = 'fa-file-music'
+        break
+      case '.mp4':
+        file.category = 'Videos'
+        file.tag = 'Video'
+        file.icon = 'fa-file-video'
+        break
+      case '.docx':
+      case '.pdf':
+        file.category = 'Documents'
+        file.tag = 'Document'
+        file.icon = 'fa-file-alt'
+        break
+      default: 
+        file.category = 'Files'
+        file.tag = 'File'
+        file.icon = 'fas fa-file'
+    }
+
     res.render('pages/download', { 
       date: dayjs,
       file: data.status,
@@ -170,16 +224,68 @@ app.get('/a/:file', async (req, res) => {
   const data = await getFile(req, 'accountless')
 
   if (data.code == '200') {
-    const author = 'Anonymous'
     const user = () => {
       if (req.isAuthenticated()) return req.user
       return 'Logged Out'
     }
 
+    let file = data.status
+    file.downloadURL = `https://cdn.azury.gg/accountless/${file.id}/${file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()}${file.type}`
+
+    switch (file.type) {
+      case '.zip':
+      case '.rar':
+      case '.7z':
+        file.category = 'Archives'
+        file.tag = 'Archive'
+        file.icon = 'fa-file-archive'
+        break
+      case '.html':
+      case '.css':
+      case '.ejs':
+      case '.js':
+      case '.py':
+      case '.json':
+        file.category = 'Code'
+        file.tag = 'Code'
+        file.icon = 'fa-file-code'
+        break
+      case '.png':
+      case '.jpg':
+      case '.jpeg':
+      case '.gif':
+      case '.svg':
+      case '.psd':
+        file.category = 'Images'
+        file.tag = 'Image'
+        file.icon = 'fa-file-image'
+        break
+      case '.mp3':
+      case '.wav':
+        file.category = 'Music'
+        file.tag = 'Music'
+        file.icon = 'fa-file-music'
+        break
+      case '.mp4':
+        file.category = 'Videos'
+        file.tag = 'Video'
+        file.icon = 'fa-file-video'
+        break
+      case '.docx':
+      case '.pdf':
+        file.category = 'Documents'
+        file.tag = 'Document'
+        file.icon = 'fa-file-alt'
+        break
+      default: 
+        file.category = 'Files'
+        file.tag = 'File'
+        file.icon = 'fas fa-file'
+    }
+
     res.render('pages/download', { 
       date: dayjs,
       file: data.status,
-      author: author,
       authenticated: req.isAuthenticated(),
       u: user(req)
     })
@@ -196,6 +302,60 @@ app.get('/t/:file', async (req, res) => {
     const user = () => {
       if (req.isAuthenticated()) return req.user
       return 'Logged Out'
+    }
+
+    let file = data.status
+    file.downloadURL = `https://cdn.azury.gg/teams/${data.status.team}/${file.id}/${file.name.replace(/[^a-z0-9]/gui, '').toLowerCase()}${file.type}`
+
+    switch (file.type) {
+      case '.zip':
+      case '.rar':
+      case '.7z':
+        file.category = 'Archives'
+        file.tag = 'Archive'
+        file.icon = 'fa-file-archive'
+        break
+      case '.html':
+      case '.css':
+      case '.ejs':
+      case '.js':
+      case '.py':
+      case '.json':
+        file.category = 'Code'
+        file.tag = 'Code'
+        file.icon = 'fa-file-code'
+        break
+      case '.png':
+      case '.jpg':
+      case '.jpeg':
+      case '.gif':
+      case '.svg':
+      case '.psd':
+        file.category = 'Images'
+        file.tag = 'Image'
+        file.icon = 'fa-file-image'
+        break
+      case '.mp3':
+      case '.wav':
+        file.category = 'Music'
+        file.tag = 'Music'
+        file.icon = 'fa-file-music'
+        break
+      case '.mp4':
+        file.category = 'Videos'
+        file.tag = 'Video'
+        file.icon = 'fa-file-video'
+        break
+      case '.docx':
+      case '.pdf':
+        file.category = 'Documents'
+        file.tag = 'Document'
+        file.icon = 'fa-file-alt'
+        break
+      default: 
+        file.category = 'Files'
+        file.tag = 'File'
+        file.icon = 'fas fa-file'
     }
 
     res.render('pages/download', { 
