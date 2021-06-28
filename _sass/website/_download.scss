@@ -1,174 +1,98 @@
-.app-k76fue {
+.bigWrapper-tfakxo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-t8w892, .footer-9sx6m9 {
+  background: $bg-dark;
+}
+
+.wrapper-5h9abc {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  background-image: url('https://cdn.jsdelivr.net/gh/azuryofficial/assets/47894d9cd26e.svg');
+  justify-content: center;
+  background-image: url('https://cdn.jsdelivr.net/gh/azuryofficial/static@1.5/b484f2ffb415187f.svg');
   background-attachment: fixed;
   background-size: cover;
-  background-position: right;
-  background-color: $background-tertiary;
-  top: 0;
-  right: 0;
-  min-height: 100%;
-  overflow: hidden;
+  background-position: left bottom;
+  background-color: $bg-hero;
+  flex: 1;
 }
 
-.header-3ctouz, .footer-57jf6e {
-  width: 100%;
-}
-
-.row-kzwobq {
+.file-5ejj3g {
+  background: $bg-dark;
+  border: solid 2px $background-tertiary;
+  border-radius: 1.75rem;
+  padding: 2.5rem 3.75rem;
+  min-width: calc(21.875rem - 7.5rem);
+  width: auto;
+  box-shadow: $shadow-all;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: calc(100% - 60px);
-  padding: 0 30px;
-}
-
-.sideAdWrapper-gmsscz {
-  background: $background-secondary-alt;
-  padding: 20px;
-  border-radius: 28px;
-  text-align: left;
-
-  p {
-    font-size: 14px;
-    color: $text-darker;
-    opacity: .99;
-  }
-}
-
-.row-7moojr {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
-}
-
-.ad-nvhvbb {
-  width: 160px;
-  height: 600px;
-}
-
-.file-p5ndhd {
-  width: calc(500px - 40px);
-  height: calc(600px - 80px);
-  padding: 40px 20px;
-  border-radius: 28px;
-  background: $background-secondary;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
-}
 
-.header-hi19xk {
   > i {
-    font-size: 100px;
+    font-size: 5rem;
     color: $header;
+    margin-bottom: 1.875rem;
   }
 
-  > h1 {
-    font-size: 32px;
-    color: $header;
-    font-weight: 500;
-    margin-top: 30px;
-
-    small {
-      color: $text-darker;
-      font-weight: 400;
-    }
-  }
-}
-
-.stats-hbp7zn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-
-  span {
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 0 5px;
-    background: $background-primary;
-    font-size: 16px;
-    color: $text-dark;
-
-    i {
-      margin-right: 5px;
-    }
-  }
-}
-
-.row-5jwqq3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  button {
-    margin-right: 15px;
-  }
-
-  i {
-    font-size: 18px;
-    color: $text-dark;
-    margin: 0 5px;
-    transition: .3s;
-    cursor: pointer;
-
-    &:hover {
-      color: $text;
-    }
-  }
-}
-
-.details-1u92ti {
-  background: $background-primary;
-  text-align: left;
-  border-radius: 16px;
-  padding: 20px;
-  width: calc(100% - 120px);
-
-  h2 {
-    color: $header;
-    font-size: 20px;
-    margin-top: 10px;
-
-    :nth-child(1) {
-      margin-top: 0;
-    }
-  }
-
-  p {
+  .row-nlg1gn {
     display: flex;
     align-items: center;
-    justify-content: left;
-    color: $text-dark;
-    margin-top: 5px;
-    font-size: 16px;
+    justify-content: center;
 
-    > img {
-      width: 32px;
-      border-radius: 50%;
-      pointer-events: none;
-      margin-right: 5px;
+    h1 {
+      font-size: 2rem;
+      color: $header;
+      font-weight: 500;
+      opacity: .99;
+
+      small {
+        color: $text-darker;
+        font-weight: 400;
+      }
+    }
+
+    span {
+      font-size: 0.875rem;
+      color: $text-dark;
+      padding: 0.3125rem 0.625rem;
+      border-radius: 3.75rem;
+      background: $background-tertiary;
+      border: solid 2px $background-secondary;
+      margin-left: 0.625rem;
+      opacity: .99;
     }
   }
-}
 
-@media only screen and (max-width: 700px) {
-  .file-p5ndhd {
-    background: none;
+  .details-235rzk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.625rem;
+
+    p {
+      font-size: 1rem;
+      color: $text-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:nth-child(1) {
+        margin-right: 0.9375rem;
+      }
+
+      i {
+        font-size: 1rem;
+        margin-right: 0.3125rem;
+      }
+    }
   }
 
-  .details-1u92ti {
-    background: $background-secondary;
-  }
-
-  .stats-hbp7zn span {
-    background: $background-secondary;
+  button {
+    margin-top: 3.75rem;
   }
 }
