@@ -92,7 +92,20 @@
     }
   }
 
-  button {
+  .row-r9hg14 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 3.75rem;
+
+    .report-279lar {
+      font-size: 0.875rem;
+      color: $red;
+      margin-left: 0.9375rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
