@@ -748,6 +748,8 @@ async function getFile(req, type) {
         'name': item.name,
         'id': item._id,
         'size': item.size,
+        'author': item.user,
+        'team': item.team,
         'readableSize': readableSize(item.size),
         'type': item.type,
         'url': `https://azury.gg/t/${item._id}`,
@@ -766,6 +768,8 @@ async function getFile(req, type) {
         'name': upload.name,
         'id': upload._id,
         'size': upload.size,
+        'author': upload.user,
+        'team': upload.team,
         'readableSize': readableSize(upload.size),
         'type': upload.type,
         'url': `https://azury.gg/t/${upload._id}`,
@@ -826,6 +830,7 @@ async function getFile(req, type) {
     if (item) {
       const details = {
         'name': item.name,
+        'author': 'Unknown',
         'id': item._id,
         'size': item.size,
         'readableSize': readableSize(item.size),
