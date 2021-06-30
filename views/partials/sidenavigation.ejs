@@ -17,21 +17,25 @@
 
   <div class="separator-cbh0bj"></div>
 
-  <% teams.forEach(function(team) { %>
-    <div class="listItem-dasxb0">
-      <div data-template="template-<%= team.id %>" class="team-g6ihe4 listItemInner-ihlzoe" onclick="window.location.href='/team/<%= team.id %>'">
-        <% if (team.icon != 0) { %>
-          <img src="https://cdn.azury.gg/icons/<%= team.icon %>" alt="error">
-        <% } else { %>
-          <div class="icon-g0shac teams-9cu6tq">
-            <%= team.name.charAt(0) %>
+  <% if (teams) { %>
+    <% if (teams != null && teams != '' && teams != 'undefined') { %>
+      <% teams.forEach(function(team) { %>
+        <div class="listItem-dasxb0">
+          <div data-template="template-<%= team.id %>" class="team-g6ihe4 listItemInner-ihlzoe" onclick="window.location.href='/team/<%= team.id %>'">
+            <% if (team.icon != 0) { %>
+              <img src="https://cdn.azury.gg/icons/<%= team.icon %>" alt="error">
+            <% } else { %>
+              <div class="icon-g0shac teams-9cu6tq">
+                <%= team.name.charAt(0) %>
+              </div>
+            <% } %>
+            <span class="item-s5gj8d"></span>
           </div>
-        <% } %>
-        <span class="item-s5gj8d"></span>
-      </div>
-      <div id="template-<%= team.id %>" class="actions-1asr66"><%= team.name %></div>
-    </div>
-  <% }) %>
+          <div id="template-<%= team.id %>" class="actions-1asr66"><%= team.name %></div>
+        </div>
+      <% }) %>
+    <% } %>
+  <% } %>
 
   <div class="listItem-dasxb0 addTeam-p26mw7">
     <div class="item-kmuqf5 listItemInner-ihlzoe item-j86qw1" onclick="createNewTeam()">
