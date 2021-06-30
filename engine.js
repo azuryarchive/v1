@@ -211,7 +211,7 @@ async function userID(req) {
   const token = req.query.token
   const userData = userCache.get(token)
   if (userData != null) return userData._id
-  const user = await userSchema.findOne({ 'token': token }, ( err, success ) => {
+  const user = await userSchema.findOne({ 'token': token }, (err, success) => {
     if (err) return false
   })
   if (!user) return false
@@ -1252,7 +1252,7 @@ async function leaveTeam(req) {
   if (team.members.some(isMember) == false) return { 'code': 403, 'status': 'Access Denied' }
   if (user == team.owner) return { 'code': 400, 'status': 'Cannot Remove Team Owner' }
 
-  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': { 'id': user } }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
+  const newTeam = await teamSchema.findOneAndUpdate({ '_id': req.params.team }, { '$pull': { 'members': user }}, { safe: true, multi: true, returnOriginal: false }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Fetch Team' }
   })
 
