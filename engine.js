@@ -1287,12 +1287,18 @@ async function deleteTeam(req) {
   if (!team) return { 'code': 400, 'status': 'Failed To Fetch Team' }
   if (user != team.owner) return { 'code': 403, 'status': 'Access Denied' }
 
-  const s3DirectoryClear = await emptyDirectory(`teams/${req.params.team}`)
-  if (s3DirectoryClear == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
-
-  await teamUploadSchema.deleteMany({ 'team': req.params.team }, (err, success) => {
-    if (err) return { 'code': 400, 'status': 'Failed To Delete Files' }
+  const filesExist = await teamUploadSchema.find({ 'team': req.params.team }, (err, success) => {
+    if (err) return { 'code': 400, 'status': 'Failed To Lookup Files' }
   })
+
+  if (filesExist.length != 0) {
+    const s3DirectoryClear = await emptyDirectory(`teams/${req.params.team}`)
+    if (s3DirectoryClear == false) return { 'code': 400, 'status': 'Failed Connecting To Storage' }
+
+    await teamUploadSchema.deleteMany({ 'team': req.params.team }, (err, success) => {
+      if (err) return { 'code': 400, 'status': 'Failed To Delete Files' }
+    })
+  }
 
   await teamSchema.findOneAndDelete({ '_id': req.params.team }, (err, success) => {
     if (err) return { 'code': 400, 'status': 'Failed To Delete Team' }
