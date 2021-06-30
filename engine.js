@@ -240,8 +240,10 @@ async function getUserID(id) {
     userID = user._id
   // user id
   } else {
-    if (validObject(id) == false) return false
-    const user = await userSchema.findOne({ _id: id })
+    if (id != encodeURIComponent(id)) return false
+    if (id.length != 18) return false
+    if (/^\d+$/.test(id) == false) return false
+    const user = await userSchema.findOne({ _id: id.replace(/[^a-zA-Z0-9]/g, '') })
     if (!user) return false
     userID = user._id
   }
