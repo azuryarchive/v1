@@ -1,4 +1,4 @@
-button {
+/*button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +13,7 @@ button {
   cursor: pointer;
   opacity: .99;
   box-shadow: $shadow-all;
-}
+} */
 
 .btn-j85yzo {
   background: $blurple;
@@ -54,4 +54,42 @@ button {
   &:hover {
     background: rgba(255,255,255,.25);
   }
+}
+
+// blurple button
+.btn-ylki76 {
+	padding: 12px 20px;
+	border-radius: 4px;
+	background: $blurple;
+	color: $header;
+	font-size: 16px;
+	box-shadow: $shadow-bottom;
+	opacity: .99;
+	transition: .3s;
+	cursor: pointer;
+
+	&:hover {
+		background: $blurple-secondary;
+	}
+
+	&:active {
+		background: $blurple-tertiary;
+	}
+}
+
+// grey button
+.btn-wjr99i {
+	padding: 12px 20px;
+	border-radius: 4px;
+	background: $grey;
+	color: $header;
+	font-size: 16px;
+	box-shadow: $shadow-bottom;
+	opacity: .99;
+	transition: .3s;
+	cursor: pointer;
+
+	&:hover {
+		background: $grey-secondary;
+	}
 }
