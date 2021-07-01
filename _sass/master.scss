@@ -1,4 +1,4 @@
-// -------------------------------- EXTERNAL -------------------------------- //
+// -------------------------------- IMPORTS -------------------------------- //
 
 @import 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
 @import 'https://pro.fontawesome.com/releases/v5.15.3/css/all.css';
@@ -6,13 +6,12 @@
 @import 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined';
 @import 'https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap';
 
+// -------------------------------- PARTIALS -------------------------------- //
+
 @import 'theme.scss';
 @import 'animations.scss';
 @import 'error-box.scss';
-@import 'mobile-spoiler.scss';
-
-// -------------------------------- WEBSITE -------------------------------- //
-
+@import 'button.scss';
 @import 'website/404.scss';
 @import 'website/cookie-notice.scss';
 @import 'website/docs.scss';
@@ -24,9 +23,6 @@
 @import 'website/prime.scss';
 @import 'website/changelog.scss';
 @import 'waves.scss';
-
-// -------------------------------- DASHBOARD -------------------------------- //
-
 @import 'dashboard/account.scss';
 @import 'dashboard/file-manager.scss';
 @import 'dashboard/navigation.scss';
@@ -35,5 +31,3 @@
 @import 'dashboard/sidebar.scss';
 @import 'dashboard/side-navigation.scss';
 @import 'dashboard/general.scss';
-
-@import 'button.scss';
