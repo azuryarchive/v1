@@ -1,13 +1,7 @@
 // -------------------------------- TYPEFACES -------------------------------- //
 
-$font: 'Poppins', sans-serif;
-$open-sans: 'Open Sans', sans-serif;
-$roboto: 'Roboto', sans-serif;
-$playfair-display: 'Playfair Display', sans-serif;
-$montserrat: 'Montserrat', sans-serif;
-$raleway: 'Raleway', sans-serif;
-$newsreader: 'Newsreader', sans-serif;
-$indie-flower: 'Indie Flower', sans-serif;
+$poppins: 'Poppins', sans-serif;
+$indie: 'Indie Flower', sans-serif;
 
 // -------------------------------- THEME -------------------------------- //
 
@@ -81,7 +75,7 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 	scroll-behavior: smooth;
 	user-select: none;
-  font-family: $font;
+  font-family: $poppins;
 }
 
 * {
@@ -157,50 +151,6 @@ svg {
     fill: $background-secondary;
   }
 }
-
-/* .tippy-box[data-theme~=dark] {
-  background: $background-secondary;
-  color: $header;
-  font-size: 16px;
-  padding: 3px 3px;
-  opacity: .99;
-  border-radius: 3px;
-  box-shadow: $shadow-bottom;
-  text-align: left;
-
-  > .tippy-arrow {
-    width: 10px;
-    height: 10px;
-  }
-
-  > .tippy-arrow:before {
-    border-width: 7px 7px 0;
-    border-top-color: $background-secondary-alt;
-  }
-
-  &[data-placement^=bottom]>.tippy-arrow:before {
-    border-width: 0 7px 7px;
-    border-bottom-color: $background-secondary-alt;
-  }
-
-  &[data-placement^=left]>.tippy-arrow:before {
-    border-width: 7px 0 7px 7px;
-    border-left-color: $background-secondary-alt;
-  }
-
-  &[data-placement^=right]>.tippy-arrow:before {
-    border-width: 7px 7px 7px 0;
-    border-right-color: $background-secondary-alt;
-  }
-
-  > .tippy-backdrop {
-    background: $background-secondary-alt;
-  }
-
-  > .tippy-svg-arrow {
-    fill: $background-secondary-alt;
-  }
-} */
 
 // -------------------------------- REALLY DARK TIPPY -------------------------------- //
 
