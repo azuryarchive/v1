@@ -8,28 +8,16 @@
   height: 100px;
 
   .brand-3hcazj {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    i {
-      font-size: 40px;
-      color: $header;
-      margin-right: 15px;
-    }
-  
-    a {
-      font-size: 25px;
-      font-weight: 500;
-      color: $header;
-      text-transform: lowercase;
-    }
+    font-size: 25px;
+    font-weight: 400;
+    opacity: .99;
+    color: $header;
+    text-transform: lowercase;
   }
 
   button {
-    border-radius: 32px;
-    padding-right: 18px;
-    padding-left: 18px;
+    font-size: 14px;
+    padding: 10px 12px;
   }
 }
 
