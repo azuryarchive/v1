@@ -11,24 +11,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 60px 0;
+  padding: 200px 0 200px 0;
 
   .text-00919z {
     text-align: left;
   
     h1 {
-      font-size: 40px;
+      font-size: 48px;
       font-weight: 600;
       color: $header;
       opacity: .99;
-      line-height: 1.3;
+      line-height: 1.4;
     }
   
     p {
       font-size: 18px;
       color: $text-dark;
       opacity: .99;
-      line-height: 1.3;
+      line-height: 1.4;
       margin-top: 10px;
       max-width: 550px;
     }
@@ -56,14 +56,67 @@
 
 // ---------------- SECTION DIVIDER ---------------- //
 
-.wrapper-59jryz {
-  background: $bg-dark;
-}
-
 .wave-0llafx {
-  width: 100%;
   background: $bg-hero;
-  pointer-events: none;
+
+  path {
+    fill: $bg-dark;
+  }
 }
 
 // ---------------- FEATURES ---------------- //
+
+.wrapper-59jryz {
+  background: $bg-dark;
+  padding: 0 0 60px 0;
+}
+
+.row-5dk5mh {
+  padding: 60px 0;
+
+  .text-5ikoto {
+    text-align: left;
+
+    h3 {
+      font-size: 28px;
+      color: $header;
+      opacity: .99;
+    }
+
+    p {
+      font-size: 17px;
+      color: $text-dark;
+      opacity: .99;
+      max-width: 700px;
+      line-height: 1.3;
+      margin-top: 10px;
+    }
+  }
+
+  > i {
+    font-size: 200px;
+    color: $blurple;
+    opacity: .99;
+  }
+}
+
+.default-n7cntp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .text-5ikoto {
+    margin-right: 60px;
+  }
+}
+
+.reversed-9v2vn8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+
+  .text-5ikoto {
+    margin-left: 60px;
+  }
+}
