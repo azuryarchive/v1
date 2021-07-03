@@ -1,7 +1,6 @@
-// -------------------------------- TYPEFACES -------------------------------- //
+// -------------------------------- TYPEFACE -------------------------------- //
 
-$poppins: 'Poppins', sans-serif;
-$indie: 'Indie Flower', sans-serif;
+$font: 'Poppins', sans-serif;
 
 // -------------------------------- THEME -------------------------------- //
 
@@ -75,7 +74,7 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 	scroll-behavior: smooth;
 	user-select: none;
-  font-family: $poppins;
+  font-family: $font;
 }
 
 * {
