@@ -4,11 +4,11 @@ $font: 'Poppins', sans-serif;
 
 // -------------------------------- THEME -------------------------------- //
 
-$header: rgba(255, 255, 255, .99);
-$text: rgba(220, 221, 222, .99);
-$text-dark: rgba(185, 187, 190, .99);
-$text-darker: rgba(114, 118, 125, .99);
-$text-darkest: rgba(79, 86, 96, .99);
+$header: #ffffff;
+$text: #dcddde;
+$text-dark: #b9bbbe;
+$text-darker: #72767d;
+$text-darkest: #4f5660;
 
 $background-primary: #36393F;
 $background-primary-alt: #3E4147;
@@ -24,31 +24,31 @@ $interactive-click: #37393f;
 $interactive-active: #383b42;
 
 $green: #43B581;
-$purple: #8e55f6;
 $red: #ED4245;
 $orange: #FAA61A;
-$blue: #2196F3;
-$white: $header;
+
+$white: #ffffff;
+$off-white: #f6f6f6;
 
 $grey: #4F545C;
 $grey-secondary: #72767D;
 
 // -------------------------------- NEW THEME -------------------------------- //
 
-$bg-darkest: #0B0C0F;
+$bg-darkest: #0b0c0f;
 $bg-darker: #101114;
-$bg-dark: #18191C;
-$bg: #1A1B1E;
+$bg-dark: #18191c;
+$bg: #1a1b1e;
 $bg-hero: #141518;
 
-$blurple: rgba(89, 102, 243, .99);
-$blurple-secondary: rgba(70, 81, 195, .99);
-$blurple-tertiary: rgba(59, 68, 165, .99);
-$blurple-light: rgba(122, 132, 245, .99);
+$blurple: #5966f3;
+$blurple-secondary: #4651c3;
+$blurple-tertiary: #3b44a5;
+$blurple-light: #7a84f5;
 
-$gold: rgba(207, 167, 107, .99);
-$silver: rgba(167, 171, 173, .99);
-$bronze: rgba(235, 180, 135, .99);
+$gold: #cfa76b;
+$silver: #a7abad;
+$bronze: #ebb487;
 
 $shadow-bottom: 0px 4px 4px rgba(0, 0, 0, .16);
 $shadow-all: 0 8px 15px rgba(0, 0, 0, .2);
