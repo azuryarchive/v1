@@ -8,7 +8,7 @@
   height: 100px;
 
   .brand-3hcazj {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     color: $header;
     text-transform: lowercase;
@@ -27,13 +27,14 @@
 
       a {
         font-size: 16px;
-        color: $text-dark;
-        opacity: .85;
+        color: $text;
         transition: .3s;
+        opacity: .97;
         margin-left: 20px;
     
         &:hover {
-          color: $text;
+          color: $header;
+          text-decoration: underline;
         }
       }
     }
