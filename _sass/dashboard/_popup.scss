@@ -116,11 +116,14 @@
 
     button {
       margin-top: 0;
+      padding: 10px 12px;
+      border-radius: 3px;
+      font-size: 14px;
     }
   }
 
-  .fa-times {
-    font-size: 20px;
+  > i {
+    font-size: 22px;
     color: $text-dark;
     transition: .3s;
     cursor: pointer;
