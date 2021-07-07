@@ -93,3 +93,20 @@
 		background: $grey-secondary;
 	}
 }
+
+// grey button
+.btn-pruzxs {
+	padding: 10px 12px;
+	border-radius: 3px;
+	background: $grey;
+	color: $header;
+	font-size: 14px;
+	box-shadow: $shadow-bottom;
+	opacity: .99;
+	transition: .3s;
+	cursor: pointer;
+
+	&:hover {
+		background: $grey-secondary;
+	}
+}
