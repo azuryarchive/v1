@@ -39,7 +39,7 @@
                 <div class="column-o8n24w">
                   <img src="https://cdn.discordapp.com/avatars/<%= u.id %>/<%= u.avatar %>" alt="error">
                   <div class="row-ij9pr3">
-                    <h1>@<b><%= user.username %></b></h1> <i class="fas fa-pen changeUsername-10haym" onclick="changeUsername()"></i>
+                    <h1>@<b><%= user.username %></b></h1> <i class="material-icons-round changeUsername-10haym" onclick="changeUsername()">edit</i>
                   </div>
                   <div class="row-9hqhf7">
                     <% if (user.flags.includes('0')) { %>
@@ -70,7 +70,7 @@
                         <p><%= u.id %></p>
                       </div>
                     </div>
-                    <button class="btn-kFpsaU" onclick="copy('<%= u.id %>')">Copy</button>
+                    <button class="btn-pruzxs" onclick="copy('<%= u.id %>')">Copy</button>
                     <!-- <i class="fas fa-copy copy-aozx9w" onclick="copy('<%= u.id %>')"></i> -->
                   </div>
                   <div class="row-p7hg7j">
@@ -81,12 +81,12 @@
                         <p><%= user.token %></p>
                       </div>
                     </div>
-                    <button class="btn-kFpsaU" onclick="copy('<%= user.token %>')">Copy</button>
+                    <button class="btn-pruzxs" onclick="copy('<%= user.token %>')">Copy</button>
                     <!-- <i class="fas fa-copy copy-aozx9w" onclick="copy('<%= user.token %>')"></i> -->
                   </div>
                 </div>
                 <div class="footerSettings-n3op5b">
-                  <button class="btn-kFpsaU userData-jej4ui">Read Data</button>
+                  <button class="btn-pruzxs userData-jej4ui">Read Data</button>
                   <a onclick="deleteUserWarning()">Delete Account</a>
                 </div>
               </div>
