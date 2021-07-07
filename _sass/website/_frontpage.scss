@@ -1,16 +1,28 @@
 // ---------------- GENERAL ---------------- //
 
 .header-i5rlgr {
-  background: $bg-darkest;
+  background: $bg-darker;
+}
+
+.footer-jf4h2z {
+  background: $bg-darker;
 }
 
 // ---------------- HERO ---------------- //
 
-.hero-yd03n5 {
-  background: $bg-darkest;
-  padding: 200px 0;
+.background-pruzxs {
+  background: url('https://cdn.jsdelivr.net/gh/azuryapp/static@1.9/images/9b0b7fb8b594cd38.png');
+  background-size: cover;
+  width: 100%;
+}
+
+.overlay-yd03n5 {
+  width: 100%;
+  //background: $bg-darkest;
+  //padding: 200px 0;
   display: flex;
   align-items: center;
+  backdrop-filter: blur(6px) grayscale(30%) contrast(80%);
   justify-content: center;
   flex-direction: column;
 
@@ -18,6 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 200px 0;
 
     .text-00919z {
       text-align: left;
@@ -28,6 +41,7 @@
         font-weight: 700;
         color: $header;
         opacity: .95;
+        text-shadow: 5px 5px rgba(0, 0, 0, .2);
       }
     
       p {
@@ -63,8 +77,6 @@
 // ---------------- SECTION DIVIDER ---------------- //
 
 .wave-0llafx {
-  background: $bg-darkest;
-
   path {
     fill: $bg-darker;
   }
@@ -87,7 +99,7 @@
     line-height: 1.3;
     color: $header;
     opacity: .95;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
   }
 }
 
@@ -118,6 +130,7 @@
   > i {
     font-size: 140px;
     color: $background-secondary;
+    opacity: .97;
   }
 }
 
