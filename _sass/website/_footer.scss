@@ -7,15 +7,24 @@
   p {
     font-size: 14px;
     color: $text-dark;
-    opacity: .97;
-  }
+    opacity: .99;
+    display: flex;
+    align-items: center;
 
-  a {
-    color: $text-dark;
-    opacity: .97;
+    i {
+      margin: 0 5px;
+    }
 
-    &:hover {
-      text-decoration: underline;
+    a {
+      margin-left: 5px;
+      color: $text-dark;
+      transition: .3s;
+      opacity: .99;
+
+      &:hover {
+        text-decoration: underline;
+        color: $text;
+      }
     }
   }
 }
@@ -30,9 +39,11 @@
     color: $text-dark;
     transition: .3s;
     margin: 0 10px;
+    opacity: .99;
 
     &:hover {
       color: $text;
+      text-decoration: underline;
     }
   }
 }
