@@ -1,5 +1,5 @@
 .header-0hjphw, .footer-xbjh68 {
-  background: $bg-dark;
+  background: $bg-darker;
 }
 
 .wrapper-gvvpn3 {
@@ -7,20 +7,25 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: $bg-hero;
+  background: $white;
   padding: 120px 0;
 }
 
 .document-eii6zl {
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
   word-wrap: break-word;
-  color: $text-dark;
-  width: 650px;
+  color: $bg;
+  opacity: .96;
+  width: 800px;
+  
+  * {
+    font-weight: 300;
+  }
 
   h2 {
     margin-top: 40px;
-    opacity: .99;
+    font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
   }
@@ -32,19 +37,17 @@
   p {
     line-height: 28px;
     margin-top: 10px;
-    color: $text-darker;
-    opacity: .99;
+    color: $bg;
   }
 
   ul {
     margin-top: 10px;
-    opacity: .99;
 
     li {
       list-style-type: disc;
       margin-left: 20px;
       line-height: 28px;
-      color: $text-darker;
+      color: $bg;
     }
   }
 
@@ -57,20 +60,17 @@
   }
 
   ol {
-    opacity: .99;
-
     li {
       list-style-type: decimal;
       line-height: 28px;
       margin-left: 20px;
       margin-top: 10px;
-      color: $text-darker;
+      color: $bg;
     }
   }
 
   b {
-    font-weight: 500;
-    text-decoration: underline;
+    font-weight: 600;
   }
 }
 
@@ -83,10 +83,9 @@
 .documentHeader-o0lx4m {
   h1 {
     font-size: 48px;
-    font-weight: 600;
-    color: $header;
+    font-weight: 800;
+    color: $bg;
     margin-bottom: 10px;
-    opacity: .98;
     line-height: 1.2;
   }
 	
