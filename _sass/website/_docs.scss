@@ -1,24 +1,19 @@
 // ---------------- HEADER ---------------- //
 
 .header-uzx4oy {
-  background: $bg-dark;
+  background: $bg-darker;
 }
 
 // ---------------- FOOTER ---------------- //
 
 .footer-c6cq83 {
-  background-color: $bg-dark;
+  background-color: $bg-darkest;
 }
 
 // ---------------- GENERAL ---------------- //
 
 .documentation-k7uj71 {
-  background-image: url('https://cdn.jsdelivr.net/gh/azuryapp/static@1.5/74e5e32d299a67dc.svg');
-  background-attachment: fixed;
-  background-color: $bg-hero;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: right;
+  background: $bg-darkest;
   padding: 120px 0;
   display: flex;
   align-items: center;
@@ -57,8 +52,9 @@
 .sidebar-nxgj4o {
   border-radius: 16px;
   padding: 25px;
-  background: $bg-dark;
-  border: solid 2px $background-tertiary;
+  background: $bg-darker;
+  box-shadow: $shadow-bottom;
+  //border: solid 2px $background-tertiary;
   text-align: left;
   max-height: 600px;
   width: calc(350px - 50px);
@@ -74,7 +70,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $background-tertiary;
+    background-color: $bg;
     border: 4px solid transparent;
     border-radius: 8px;
     min-height: 40px;
@@ -103,13 +99,14 @@
   ul {
     li {
       font-size: 16px;
-      color: $text-darker;
-      line-height: 1.2;
-      opacity: .99;
+      color: $text-dark;
+      line-height: 1.3;
+      opacity: .75;
       transition: .3s;
 
       &:hover {
-        color: $text-dark;
+        color: $text;
+        opacity: .99;
         text-decoration: underline;
         cursor: pointer;
       }
@@ -144,8 +141,9 @@
     .childItem-7k1itc {
       border-radius: 16px;
       padding: 25px;
-      background: $bg-dark;
-      border: solid 2px $background-tertiary;
+      background: $bg-darker;
+      box-shadow: $shadow-bottom;
+      border: solid 2px transparent;
       text-align: left;
       margin-top: 20px;
     }
@@ -162,10 +160,12 @@
         padding: 3px 5px;
         margin-left: 10px;
         border-radius: 2px;
-        background: $white;
+        //background: $white;
         box-shadow: $shadow-all;
-        color: $background-tertiary;
-        font-weight: 600;
+        //color: $background-tertiary;
+        color: $white;
+        background: $blurple;
+        font-weight: 500;
         text-transform: uppercase;
         font-size: 14px;
       }
@@ -174,7 +174,7 @@
     p {
       font-size: 16px;
       color: $text-dark;
-      opacity: .99;
+      opacity: .75;
       margin-top: 10px;
       line-height: 1.4;
 
@@ -182,7 +182,7 @@
         padding: 2px 5px;
         border-radius: 3px;
         background: $background-secondary;
-        color: $text-dark;
+        color: $text;
         font-weight: 500;
         font-size: 14px;
       }
@@ -205,10 +205,11 @@
       }
 
       .link {
-        color: $blurple-light;
+        color: $header;
+        text-decoration: underline;
 
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
 
@@ -219,11 +220,12 @@
 
     .code-0e6a12 {
       // background: $background-tertiary-alt;
-      background: $background-tertiary;
-      border: solid 2px $background-secondary;
+      background: $bg;
+      box-shadow: $shadow-bottom;
+      //border: solid 2px $background-secondary;
       padding: 10px;
       border-radius: 5px;
-      color: $text-dark;
+      color: $text;
       opacity: .99;
       font-size: 16px;
       transition: .3s;
