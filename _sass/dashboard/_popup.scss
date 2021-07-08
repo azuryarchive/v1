@@ -21,13 +21,13 @@
   max-height: calc(100% - 100px);
   width: 350px;
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 28px;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: $background-tertiary;
+  background: $background-tertiary-alt;
 
   .row-23omrp {
     label {
@@ -70,17 +70,12 @@
   }
 
   input[TYPE=TEXT] {
-    min-width: 0;
     max-width: 70%;
     font-size: 14px;
-    unicode-bidi: plaintext;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-    border-image: initial;
-    outline: 0;
+    border: solid 2px transparent;
+    box-shadow: $shadow-bottom;
     transition: background-color 150ms ease 0s, border-color, color;
-    background: $background-secondary;
+    background: $background-secondary-alt;
     //box-shadow: $shadow-bottom;
     width: calc(60% - 22px);
     opacity: .99;
@@ -93,6 +88,11 @@
     padding: 6px 20px;
     border-radius: 3px;
     margin-right: 10px;
+
+    &::placeholder {
+      color: $text-dark;
+      opacity: .5;
+    }
 
     &:focus {
       border: solid 2px $blurple;
@@ -171,13 +171,15 @@
   justify-content: center;
   padding: 10px 15px;
   margin-top: 30px;
-  border-radius: 8px;
-  background: $background-secondary;
+  border-radius: 64px;
+  background: $background-secondary-alt;
+  box-shadow: $shadow-bottom;
 
   i {
     font-size: 20px;
     color: $text;
     cursor: pointer;
+    font-style: normal;
     transition: .3s;
     margin: 0 5px;
     opacity: .99;
