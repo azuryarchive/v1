@@ -121,13 +121,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  backdrop-filter: blur(6px);
   margin: 10px;
   cursor: pointer;
   overflow: hidden;
   transition: .3s;
 
   &:hover {
-    transform: scale(.95) !important;
+    border-color: $background-secondary;
+    transform: scale(.95);
   }
 
   > i {
@@ -146,27 +148,28 @@
       display: none;
     }
 
-    h1 {
+    .titleInner-hzsxux {
       display: flex;
       align-items: center;
-      justify-content: left;
+      justify-content: center;
       font-size: 22px;
       color: $header;
       opacity: .99;
 
-      > b {
-        font-size: 20px;
-        color: $text-darker;
+      span {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 160px;
+        text-overflow: ellipsis;
+        line-height: 1.3;
+        background: green;
       }
-    }
 
-    span {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      max-width: 160px;
-      text-overflow: ellipsis;
-      line-height: 1.3;
+      > b {
+        opacity: .6;
+        color: $text-dark;
+      }
     }
   }
 
@@ -221,7 +224,7 @@
   .wrapperInner-xtc435 {
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .toggleGrid-iqpt69 {
@@ -233,12 +236,13 @@
   }
 
   .item-96xnxf {
-    width: calc(800px - 50px);
+    width: calc(800px - 30px);
     height: auto;
-    padding: 20px 25px;
-    border-radius: 64px;
+    padding: 15px;
+    border-radius: 8px;
     justify-content: space-between;
     flex-direction: row;
+    margin: 5px;
 
     > i {
       display: none;
@@ -250,10 +254,10 @@
       justify-content: right;
 
       span {
-        font-size: 16px;
-        color: $text-darker;
+        font-size: 14px;
+        opacity: .7;
+        color: $text-dark;
         margin-left: 10px;
-        opacity: .99;
       }
     }
 
@@ -274,6 +278,10 @@
         text-overflow: ellipsis;
         line-height: 1.2;
       }
+
+      h1 {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -286,6 +294,7 @@
 
 .action-m9sypr {
   color: $text-dark;
+  opacity: .99;
   padding: 10px 15px;
   width: calc(100% - 30px);
   border-radius: 3px;
@@ -349,6 +358,8 @@
   z-index: 9;
   width: 400px;
   height: 100%;
+  //background: rgba(24, 25, 28, .7);
+  //backdrop-filter: blur(6px);
   background: $background-tertiary-alt;
   border-left: solid 2px $background-secondary-alt;
 }
@@ -371,25 +382,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    font-weight: 500;
-    color: $header;
+    color: rgba(185, 187, 190,.6);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
     margin-top: 30px;
 
     span {
-      font-weight: 400;
-      display: inline-block;
-      overflow: hidden;
+      line-height: 1.2;
+      color: $header;
+      font-size: 22px;
+      font-weight: 500;
       white-space: nowrap;
-      max-width: 130px;
-      line-height: 1.2;
+      overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    b {
-      font-weight: 400;
-      color: $text-darker;
-      line-height: 1.2;
+      max-width: 130px;
     }
   }
 }
@@ -418,11 +425,11 @@
   margin-top: 120px;
 
   span {
-    font-size: 18px;
-    color: $text-darker;
-    line-height: 1.2;
+    font-size: 16px;
+    opacity: .6;
+    color: $text-dark;
+    line-height: 1.4;
     margin-bottom: 5px;
-    opacity: .99;
   }
 
   p {
