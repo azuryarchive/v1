@@ -90,7 +90,7 @@
   background-size: cover;
   background-position: left bottom;
   width: 100%;
-  height: calc(100% - 120px);
+  height: 100%;
   max-height: calc(100% - 120px);
   overflow-y: scroll;
   padding: 60px 0;
@@ -105,8 +105,8 @@
   bottom: 0;
   right: 0;
   width: calc(100% - 410px);
-  height: calc(100% - 420px);
-  max-height: calc(100% - 420px);
+  height: calc(100% - 320px);
+  max-height: calc(100% - 320px);
   overflow-y: scroll;
   padding: 160px 0;
 }
