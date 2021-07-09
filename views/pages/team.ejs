@@ -93,35 +93,35 @@
                   <% files.forEach(function(file) { %>
                     <div data-template="template-<%= file._id %>" class="file-lemhr3 item-96xnxf <% if (file.favorite == true) { %>favorite<% } %>">
                       <% if (file.type == '.zip' || file.type == '.rar') { %>
-                        <i class="fas fa-file-archive"></i>    
+                        <i class="material-icons-outlined">folder</i>    
                       <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
-                        <i class="fas fa-file-code"></i>
+                        <i class="material-icons-outlined">code</i>
                       <% } else if (file.type == '.png' || file.type == '.jpg' || file.type == '.jpeg' || file.type == '.gif' || file.type == '.svg' || file.type == '.psd') { %>
-                        <i class="fas fa-file-image"></i>
+                        <i class="material-icons-outlined">image</i>
                       <% } else if (file.type == '.mp3' || file.type == '.wav') { %>
-                        <i class="fas fa-file-music"></i>
+                        <i class="material-icons-outlined">music_note</i>
                       <% } else if (file.type == '.mp4') { %>
-                        <i class="fas fa-file-video"></i>
+                        <i class="material-icons-outlined">movie</i>
                       <% } else if (file.type == '.docx' || file.type == '.pdf') { %>
-                        <i class="fas fa-file-alt"></i>
+                        <i class="material-icons-round">description</i>
                       <% } else { %>
-                        <i class="fas fa-file"></i>
+                        <i class="material-icons-round">insert_drive_file</i>
                       <% } %>
                       <div class="title-ojp0kq">
                         <% if (file.type == '.zip' || file.type == '.rar') { %>
-                          <i class="fas fa-file-archive"></i>    
+                          <i class="material-icons-outlined">folder</i>    
                         <% } else if (file.type == '.html' || file.type == '.css' || file.type == '.ejs' || file.type == '.js' || file.type == '.py' || file.type == '.json') { %>
-                          <i class="fas fa-file-code"></i>
+                          <i class="material-icons-outlined">code</i>
                         <% } else if (file.type == '.png' || file.type == '.jpg' || file.type == '.jpeg' || file.type == '.gif' || file.type == '.svg' || file.type == '.psd') { %>
-                          <i class="fas fa-file-image"></i>
+                          <i class="material-icons-outlined">image</i>
                         <% } else if (file.type == '.mp3' || file.type == '.wav') { %>
-                          <i class="fas fa-file-music"></i>
+                          <i class="material-icons-outlined">music_note</i>
                         <% } else if (file.type == '.mp4') { %>
-                          <i class="fas fa-file-video"></i>
+                          <i class="material-icons-outlined">movie</i>
                         <% } else if (file.type == '.docx' || file.type == '.pdf') { %>
-                          <i class="fas fa-file-alt"></i>
+                          <i class="material-icons-round">description</i>
                         <% } else { %>
-                          <i class="fas fa-file"></i>
+                          <i class="material-icons-round">insert_drive_file</i>
                         <% } %>
                         <h1><span><%= file.name %></span><b><%= file.type %></b></h1>
                       </div>
