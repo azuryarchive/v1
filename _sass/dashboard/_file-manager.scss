@@ -148,23 +148,10 @@
       display: none;
     }
 
-    .titleInner-hzsxux {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
+    h1 {
+      font-size: 20px;
       color: $header;
       opacity: .99;
-
-      span {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        max-width: 160px;
-        text-overflow: ellipsis;
-        line-height: 1.3;
-        background: green;
-      }
 
       > b {
         opacity: .6;
@@ -270,15 +257,6 @@
         opacity: .99;
       }
 
-      span {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        max-width: 400px;
-        text-overflow: ellipsis;
-        line-height: 1.2;
-      }
-
       h1 {
         font-size: 18px;
       }
@@ -379,10 +357,7 @@
   width: calc(100% - 120px);
 
   h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(185, 187, 190,.6);
+    color: rgba(185, 187, 190, .6);
     font-weight: 400;
     font-size: 18px;
     line-height: 1.2;
@@ -391,12 +366,8 @@
     span {
       line-height: 1.2;
       color: $header;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 130px;
     }
   }
 }
@@ -416,8 +387,10 @@
 }
 
 .fileIcon-e2r17e {
-  font-size: 64px;
-  color: $header;
+  i {
+    font-size: 100px;
+    color: $header;
+  }
 }
 
 .details-m0h9op {
